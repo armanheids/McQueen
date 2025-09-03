@@ -1,31 +1,44 @@
-version: '3.8'
-
 services:
   carla-server:
     image: carlasim/carla:0.9.15
-    command: /bin/bash -c "./CarlaUE4.sh -opengl -carla-rpc-port=2000 -carla-streaming-port=2001"
-    ports:
-      - "2000:2000"
-      - "2001:2001"
+    privileged: true
+    network_mode: host
     environment:
-      - DISPLAY=
-    networks:
-      - carla-network
-    restart: unless-stopped
+      - DISPLAY=${DISPLAY}
+      - PULSE_RUNTIME_PATH=/run/user/1000/pulse
+      - ALSA_PCM_CARD=default
+      - ALSA_PCM_DEVICE=0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    command: /bin/bash -c "export PULSE_SERVER=unix:/run/user/1000/pulse/native && ./CarlaUE4.sh -nosound -carla-rpc-port=2000"
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /run/user/1000/pulse:/run/user/1000/pulse:ro
+    devices:
+      - /dev/snd:/dev/snd
+    healthcheck:
+      test: ["CMD-SHELL", "timeout 5 bash -c '</dev/tcp/localhost/2000' || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
 
   carla-client:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    environment:
+      - CARLA_HOST=localhost
+      - CARLA_PORT=2000
+    network_mode: host
     depends_on:
-      - carla-server
+      carla-server:
+        condition: service_healthy
     volumes:
       - ./src:/app/src
-      - ./data:/app/data
-    networks:
-      - carla-network
-    environment:
-      - CARLA_HOST=carla-server
-      - CARLA_PORT=2000
-
-networks:
-  carla-network:
-    driver: bridge
+    restart: on-failure

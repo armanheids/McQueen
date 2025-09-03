@@ -1,65 +1,41 @@
-# src/main.py
+import time
+
 import carla
 import random
-import time
-import os
 
+## Part 1
 
-def main():
-    # Connection parameters
-    host = os.getenv("CARLA_HOST", "localhost")
-    port = int(os.getenv("CARLA_PORT", "2000"))
+# Connect to Carla
+client = carla.Client('localhost', 2000)
+world = client.get_world()
 
-    print(f"Connecting to CARLA server at {host}:{port}")
+# Get a vehicle from the library
+bp_lib = world.get_blueprint_library()
+vehicle_bp = bp_lib.find('vehicle.lincoln.mkz_2020')
 
+# Get a spawn point
+spawn_points = world.get_map().get_spawn_points()
+
+# Spawn a vehicle
+vehicle = world.try_spawn_actor(vehicle_bp, random.choice(spawn_points))
+
+# Autopilot
+vehicle.set_autopilot(True) 
+
+# Get world spectator
+spectator = world.get_spectator() 
+
+# Without the loop, the spectator won't follow the vehicle
+while True:
     try:
-        # Connect to CARLA server
-        client = carla.Client(host, port)
-        client.set_timeout(10.0)
+        # Move the spectator behind the vehicle 
+        transform = carla.Transform(vehicle.get_transform().transform(carla.Location(x=-4,z=2.5)),vehicle.get_transform().rotation) 
+        spectator.set_transform(transform) 
+        time.sleep(0.005)
 
-        # Get world
-        world = client.get_world()
-        print("Connected to CARLA world successfully!")
+    except KeyboardInterrupt as e:
 
-        # Get blueprint library
-        blueprint_library = world.get_blueprint_library()
+        vehicle.destroy()
 
-        # Spawn a vehicle
-        vehicle_bp = blueprint_library.filter("vehicle.tesla.model3")[0]
-        spawn_points = world.get_map().get_spawn_points()
-        spawn_point = random.choice(spawn_points)
-
-        vehicle = world.spawn_actor(vehicle_bp, spawn_point)
-        print(f"Spawned vehicle: {vehicle.type_id}")
-
-        # Enable autopilot
-        vehicle.set_autopilot(True)
-
-        # Run simulation for 30 seconds
-        print("Running simulation for 30 seconds...")
-        for i in range(300):  # 30 seconds at 10 FPS
-            # Get vehicle location
-            location = vehicle.get_location()
-            velocity = vehicle.get_velocity()
-            speed = 3.6 * velocity.length()  # Convert to km/h
-
-            print(
-                f"Step {i}: Position({location.x:.2f}, {location.y:.2f}) Speed: {speed:.2f} km/h"
-            )
-
-            time.sleep(0.1)
-
-        print("Simulation completed!")
-
-    except Exception as e:
-        print(f"Error: {e}")
-
-    finally:
-        # Clean up
-        if "vehicle" in locals():
-            vehicle.destroy()
-            print("Vehicle destroyed")
-
-
-if __name__ == "__main__":
-    main()
+        print('Vehicles Destroyed. Bye!')
+        break
