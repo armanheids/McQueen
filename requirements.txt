@@ -1,0 +1,4 @@
+carla==0.9.15
+numpy>=1.21.0
+pygame>=2.0.0
+pillow>=8.0.0

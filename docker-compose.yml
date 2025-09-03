@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  carla-server:
+    image: carlasim/carla:0.9.15
+    command: /bin/bash -c "./CarlaUE4.sh -opengl -carla-rpc-port=2000 -carla-streaming-port=2001"
+    ports:
+      - "2000:2000"
+      - "2001:2001"
+    environment:
+      - DISPLAY=
+    networks:
+      - carla-network
+    restart: unless-stopped
+
+  carla-client:
+    build: .
+    depends_on:
+      - carla-server
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+    networks:
+      - carla-network
+    environment:
+      - CARLA_HOST=carla-server
+      - CARLA_PORT=2000
+
+networks:
+  carla-network:
+    driver: bridge
