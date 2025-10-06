@@ -1,0 +1,25 @@
+Ego source 
+ped line
+Ego destination
+
+
+
+inputs in each MAPE: 
+	EGO speed
+	EGO acc
+	EGO break acc
+
+	PED speed
+	is PED detected
+	distance to PED
+
+	distance to PED line
+
+	INCOME_EGO speed
+	is INCOME_EGO detected
+	distance to INCOME_EGO
+	
+	is EGO traffic light detected
+	is INCOME_EGO traffic light detected
+	EGO traffic light time
+	INCOME_EGO traffic light time
