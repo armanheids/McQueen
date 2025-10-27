@@ -1,0 +1,29 @@
+Clear : 	
+rain intensity = 0.0	
+fog density = 0.0	
+road friction = 0.9	
+camera noise level = 0.10	
+lidar accurancy = 0.94	
+perception latency = 90.0	
+rain error cofe = 0.10	
+fog error cofe = 0.15
+---------------------------------------------------
+Rain :	
+rain intensity = 0.6	
+fog density = 0.1	
+road friction = 0.55	
+camera noise level = 0.18	
+lidar accurancy = 0.88	
+perception latency = 110.0	
+rain error cofe = 0.20	
+fog error cofe = 0.20
+--------------------------------------------------
+Fog : 	
+rain intensity = 0.1	
+fog density = 0.7	
+road friction = 0.6	
+camera noise level = 0.22	
+lidar accurancy = 0.85	
+perception latency = 130.0	
+rain error cofe = 0.15	
+fog error cofe = 0.30

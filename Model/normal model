@@ -1,0 +1,343 @@
+mdp
+
+// ==================== SECTION 1: PARAMETERS ====================
+const double EGO_INIT_SPEED;  // km/h
+const double EGO_DIST_TO_INTERSECTION = 100.0;
+const double EGO_BRAKE_CAPACITY = 8.0;
+const double EGO_ACCELERATION = 3.0;
+
+const bool PED_DETECTED = true;
+const double PED_DISTANCE = 15.0;
+const double PED_SPEED = 1.5;
+const double PED_ANGLE = 60.0;
+
+const bool InCOMING_DETECTED = true;
+const double InCOMING_DISTANCE = 80.0;
+const double InCOMING_SPEED = 60.0;  // km/h
+
+const int EGO_LIGHT = 1;      
+const int OPPOSITE_LIGHT_BASE = 0; 
+
+const double LIGHT_REMAINING_TIME = 5.0;  
+
+// --------- WEATHER & SENSOR PARAMETERS ---------
+const double RAIN_INTENSITY;
+const double FOG_DENSITY;
+const double ROAD_FRICTION;  
+const int TIME_OF_DAY = 1; // 1:Day
+
+const double CAMERA_NOISE_LEVEL;
+const double LIDAR_ACCURACY;
+const double PERCEPTION_LATENCY; // ms
+
+const double RAIN_ERROR_COEF;
+const double FOG_ERROR_COEF;
+const double NIGHT_ERROR_COEF = 0.15;
+
+// ==================== SECTION 2: FORMULAS ====================
+
+formula base_perception_error =
+    (RAIN_INTENSITY * RAIN_ERROR_COEF) +
+    (FOG_DENSITY * FOG_ERROR_COEF) +
+    ((1 - TIME_OF_DAY) * NIGHT_ERROR_COEF) +
+    (CAMERA_NOISE_LEVEL * 0.10) +
+    ((1 - LIDAR_ACCURACY) * 0.05 * 0.5);
+
+formula perception_error_prob =
+    min(max(base_perception_error, 0.45), 0.55);
+
+// Probabilities with bounds 
+formula move_success_prob = min(1.0, ROAD_FRICTION + 0.15);
+formula move_fast_prob = max(0.0, (move_success_prob - 0.7) / 2);
+
+// Use ego_speed variable (discrete 0..10) converted to km/h and m/s for dynamic formulas 
+formula ego_speed_kmh = ego_speed * 10.0;
+formula ego_speed_ms_dynamic = EGO_INIT_SPEED / 3.6;
+
+formula brake_distance =
+    (ego_speed_ms_dynamic * ego_speed_ms_dynamic) / (2.0 * ROAD_FRICTION * EGO_BRAKE_CAPACITY);
+
+formula base_ped_cross_decision_prob = 0.8 - (ego_speed / 20.0) - ((6 - ego_pos) / 10.0);
+
+formula ped_cross_decision_prob =
+    PED_DETECTED ? max(0.05, min(0.95, base_ped_cross_decision_prob)) : 0.7;
+
+// MODIFIED REACTION TIME 
+formula reaction_time = 0.5 + (PERCEPTION_LATENCY / 1000.0) + (perception_error_prob * 0.4);
+
+formula safe_ped_speed = PED_SPEED < 0.1 ? 0.1 : PED_SPEED;
+formula inc_speed_ms = InCOMING_SPEED / 3.6;
+formula safe_inc_speed = inc_speed_ms < 0.1 ? 0.1 : inc_speed_ms;
+
+
+// Time To Collisions
+formula ttc_pedestrian = PED_DETECTED ?
+    (PED_DISTANCE / max(safe_ped_speed - ego_speed_ms_dynamic, 0.1)) + reaction_time +
+    (1.0 - ROAD_FRICTION) * 0.3
+    : 999.0;
+
+formula ttc_incoming = InCOMING_DETECTED ?
+    (InCOMING_DISTANCE / max(safe_inc_speed + ego_speed_ms_dynamic, 0.1)) + reaction_time +
+    (1.0 - ROAD_FRICTION) * 0.2
+    : 999.0;
+
+formula early_ped_danger = (ttc_pedestrian < (EGO_INIT_SPEED / 12.0)); 
+formula early_inc_danger = (ttc_incoming < (EGO_INIT_SPEED / 10.0));
+
+formula angle_factor = PED_ANGLE > 45.0 ? 0.8 : 0.2;
+formula distance_factor = PED_DISTANCE < 5.0 ? 1.2 : 1.0;
+formula light_factor = EGO_LIGHT = 0 ? 1.5 : 0.7;
+formula base_ped_crossing = angle_factor * distance_factor * light_factor;
+formula ped_crossing_prob =
+    PED_DETECTED ? (base_ped_crossing > 0.95 ? 0.95 : base_ped_crossing) : 0.0;
+
+formula is_unsafe_maneuver = (EGO_LIGHT > 0) & InCOMING_DETECTED & (inc_pos > 2);
+formula distance_risk = InCOMING_DISTANCE < 40.0 ? 0.8 : 0.2;
+formula speed_risk = InCOMING_SPEED > 60.0 ? 1.4 : 1.0;
+formula base_conflict = distance_risk * speed_risk * 0.8;
+formula conflict_risk =
+    is_unsafe_maneuver ? min(0.95, base_conflict) : 0.0;
+
+
+formula ped_danger = (ped_pos >= 7 & ped_pos <= 9) & (ego_pos >= 6) &
+                     (ttc_pedestrian < brake_distance / 8.0);
+formula inc_danger = (inc_pos >= 6 & inc_pos <= 9) & (ego_pos >= 6) &
+                     (ttc_incoming < brake_distance / 6.0);
+
+
+formula collision_imminent =
+    (ped_danger | inc_danger) &
+    (ROAD_FRICTION < 0.85); 
+
+formula no_collision = (ego_pos != 11) & (ped_pos != 11) & (inc_pos != 11);
+
+
+formula OPPOSITE_LIGHT = cycle_phase;
+
+// ==================== SECTION 3: MODULES ====================
+module ego_vehicle
+    ego_pos : [0..11] init 0;
+    ego_speed : [0..10] init 5;
+    braking : bool init false;
+    emergency_brake : bool init false;
+
+
+    [] !braking & !emergency_brake & ego_pos < 6 & ego_speed > 0 ->
+        (move_success_prob - move_fast_prob) : (ego_pos' = min(10, ego_pos + 1)) & (ego_speed' = ego_speed) +
+        move_fast_prob : (ego_pos' = min(10, ego_pos + 2)) & (ego_speed' = ego_speed) +
+        (1.0 - move_success_prob) : (ego_pos' = ego_pos) & (ego_speed' = ego_speed);
+
+    [] !emergency_brake & ego_speed > 1 & !braking & (early_ped_danger | early_inc_danger) ->
+        0.75 : (ego_speed' = max(0, ego_speed - 2)) & (braking' = true) +
+        0.25 : (ego_speed' = max(0, ego_speed - 1)) & (braking' = true);
+
+    [] !emergency_brake & ego_speed = 1 & !braking ->
+        0.80 : (ego_speed' = 0) & (braking' = true) +
+        0.20 : (ego_speed' = 1) & (braking' = true);
+
+    [] !emergency_brake & collision_imminent & ego_speed > 3 ->
+        0.92 : (ego_speed' = max(0, ego_speed - 4)) & (emergency_brake' = true) +
+        0.08 : (ego_speed' = max(0, ego_speed - 2)) & (emergency_brake' = true);
+
+    [] !emergency_brake & collision_imminent & ego_speed > 0 & ego_speed <= 3 ->
+        0.95 : (ego_speed' = 0) & (emergency_brake' = true) +
+        0.05 : (ego_speed' = max(0, ego_speed - 1)) & (emergency_brake' = true);
+
+    [] !braking & !emergency_brake & ego_speed < 10 & ego_pos < 3 & !collision_imminent ->
+        0.80 : (ego_speed' = min(10, ego_speed + 1)) +
+        0.20 : (ego_speed' = ego_speed);
+
+    [] braking & ego_speed = 0 & !collision_imminent ->
+        0.85 : (braking' = false) +
+        0.15 : (braking' = true);
+
+    [yield] collision_imminent & ego_pos >= 3 & ego_speed > 0 ->
+        0.90 : (ego_speed' = max(0, ego_speed - 3)) & (braking' = true) +
+        0.10 : (ego_speed' = ego_speed);
+
+    [cross] ego_pos >= 6 & ego_pos < 9 & ego_speed > 0 & !collision_imminent ->
+        0.90 : (ego_pos' = ego_pos + 1) +
+        0.10 : (ego_pos' = ego_pos);
+
+    [cross] ego_pos = 9 & ego_speed > 0 & !collision_imminent ->
+        0.95 : (ego_pos' = 10) +
+        0.05 : (ego_pos' = ego_pos);
+
+    [collision_ped] ego_pos >= 6 & ego_pos <= 9 & ped_pos >= 7 & ped_pos <= 9 & !emergency_brake ->
+        min(0.01 + ((1.0 - ROAD_FRICTION) * 0.25) + (EGO_INIT_SPEED / 700.0), 0.30) :
+            (ego_pos' = 11) & (ego_speed' = 0) & (emergency_brake' = true) +
+        (1.0 - min(0.01 + ((1.0 - ROAD_FRICTION) * 0.25) + (EGO_INIT_SPEED / 700.0), 0.30)) :
+            (ego_pos' = ego_pos) & (ego_speed' = 0) & (emergency_brake' = true);
+
+    [collision_inc] ego_pos >= 6 & ego_pos <= 9 & inc_pos >= 6 & inc_pos <= 9 & !emergency_brake ->
+        min(0.015 + ((1.0 - ROAD_FRICTION) * 0.30) + (EGO_INIT_SPEED / 650.0), 0.35) :
+            (ego_pos' = 11) & (ego_speed' = 0) & (emergency_brake' = true) +
+        (1.0 - min(0.015 + ((1.0 - ROAD_FRICTION) * 0.30) + (EGO_INIT_SPEED / 650.0), 0.35)) :
+            (ego_pos' = ego_pos) & (ego_speed' = 0) & (emergency_brake' = true);
+
+    [tick] true -> true;
+endmodule
+
+module pedestrian
+    ped_pos : [0..11] init 0;
+    ped_intent : [0..2] init 0;
+    ped_awareness : [0..3] init 0;
+
+    [] PED_DETECTED & ped_pos = 0 ->
+        (1.0 - perception_error_prob) : (ped_pos' = 1) +
+        perception_error_prob : (ped_pos' = 0);
+
+    [] ped_pos >= 1 & ped_pos < 4 & ped_intent = 0 ->
+        0.65 : (ped_pos' = ped_pos + 1) +
+        0.35 : (ped_pos' = ped_pos);
+
+    [] ped_pos >= 4 & ped_awareness < 3 & ego_pos >= 3 ->
+        0.55 : (ped_awareness' = ped_awareness + 1) +
+        0.45 : (ped_awareness' = ped_awareness);
+
+    [] ped_pos >= 4 & ped_pos <= 6 & ped_intent = 0 ->
+        ped_cross_decision_prob : (ped_intent' = 1) +
+        (1.0 - ped_cross_decision_prob) : (ped_intent' = 0);
+
+    [] ped_pos >= 4 & ped_pos <= 6 & ped_intent = 1 ->
+        0.75 : (ped_pos' = 7) +
+        0.25 : (ped_pos' = ped_pos);
+
+    [] ped_pos >= 7 & ped_pos < 9 & ped_intent = 1 & PED_SPEED > 1.0 ->
+        0.70 : (ped_pos' = ped_pos + 1) +
+        0.30 : (ped_pos' = ped_pos);
+
+    [] ped_pos >= 7 & ped_pos < 9 & ped_intent = 1 & PED_SPEED <= 1.0 ->
+        0.45 : (ped_pos' = ped_pos + 1) +
+        0.55 : (ped_pos' = ped_pos);
+
+    [] ped_pos >= 7 & ped_pos < 9 & ego_pos >= 6 & ego_speed > 5 & ped_awareness >= 1 ->
+        0.35 : (ped_intent' = 2) & (ped_pos' = ped_pos - 1) +
+        0.65 : (ped_pos' = ped_pos);
+
+    [] ped_pos = 9 & ped_intent = 1 ->
+        0.88 : (ped_pos' = 10) +
+        0.12 : (ped_pos' = ped_pos);
+
+    [collision_ped] ped_pos >= 7 & ped_pos <= 9 & ego_pos >= 6 & ego_pos <= 9 ->
+        1.0 : (ped_pos' = 11) & (ped_intent' = 2);
+
+    [tick] true -> true;
+endmodule
+
+module Incoming
+    inc_pos : [0..11] init 0;
+    inc_speed : [0..8] init 4;
+    inc_behavior : [0..2] init 0;
+
+    [] InCOMING_DETECTED & inc_pos = 0 ->
+        (1.0 - perception_error_prob) : (inc_pos' = 1) +
+        perception_error_prob : (inc_pos' = 0);
+
+    [] inc_pos >= 1 & inc_pos < 3 & inc_behavior = 0 ->
+        0.20 : (inc_behavior' = 1) +
+        0.60 : (inc_behavior' = 0) +
+        0.20 : (inc_behavior' = 2);
+
+    [] inc_pos >= 1 & inc_pos < 6 & OPPOSITE_LIGHT != 2 & inc_behavior != 1 ->
+        0.75 : (inc_pos' = inc_pos + 1) +
+        0.20 : (inc_pos' = inc_pos) +
+        0.05 : (inc_pos' = inc_pos + 2);
+
+    [] inc_pos >= 1 & inc_pos < 6 & OPPOSITE_LIGHT != 2 & inc_behavior = 1 ->
+        0.60 : (inc_pos' = inc_pos + 2) +
+        0.30 : (inc_pos' = inc_pos + 1) +
+        0.10 : (inc_pos' = inc_pos);
+
+    [] inc_pos >= 3 & inc_pos < 6 & OPPOSITE_LIGHT = 2 & inc_behavior = 1 & InCOMING_SPEED > 50.0 ->
+        0.65 : (inc_pos' = inc_pos + 2) +
+        0.35 : (inc_pos' = inc_pos + 1);
+
+    [] inc_pos >= 3 & inc_pos < 6 & OPPOSITE_LIGHT = 2 & inc_behavior = 1 & InCOMING_SPEED <= 50.0 ->
+        0.40 : (inc_pos' = inc_pos + 1) +
+        0.60 : (inc_pos' = inc_pos);
+
+    [] inc_pos >= 3 & inc_pos < 6 & OPPOSITE_LIGHT = 2 & inc_behavior != 1 & inc_speed > 1 ->
+        0.75 : (inc_speed' = inc_speed - 2) +
+        0.25 : (inc_speed' = inc_speed - 1);
+
+    [] inc_pos >= 3 & inc_pos < 6 & OPPOSITE_LIGHT = 2 & inc_behavior != 1 & inc_speed = 1 ->
+        0.80 : (inc_speed' = 0) +
+        0.20 : (inc_speed' = 1);
+
+    [] inc_pos >= 3 & inc_pos < 6 & OPPOSITE_LIGHT = 2 & inc_behavior != 1 & inc_speed = 0 ->
+        1.0 : (inc_speed' = 0);
+
+    [] inc_pos >= 6 & inc_pos < 9 & inc_speed > 0 ->
+        0.82 : (inc_pos' = inc_pos + 1) +
+        0.18 : (inc_pos' = inc_pos);
+
+    [collision_inc] inc_pos >= 6 & inc_pos <= 9 & ego_pos >= 6 & ego_pos <= 9 ->
+        1.0 : (inc_pos' = 11);
+
+    [] inc_pos = 9 & ego_pos != 11 ->
+        0.87 : (inc_pos' = 10) +
+        0.13 : (inc_pos' = inc_pos);
+
+    [tick] true -> true;
+endmodule
+
+module traffic_light
+    time_left : [0..20] init floor(LIGHT_REMAINING_TIME);
+    cycle_phase : [0..3] init 1;
+
+    [tick] time_left > 0 ->
+        0.93 : (time_left' = time_left - 1) +
+        0.07 : (time_left' = time_left);
+
+    [tick] time_left = 0 & cycle_phase < 3 ->
+        0.88 : (cycle_phase' = cycle_phase + 1) & (time_left' = 5) +
+        0.12 : (cycle_phase' = 1);
+
+    [tick] time_left = 0 & cycle_phase = 3 ->
+        1.0 : (cycle_phase' = 0) & (time_left' = 10);
+endmodule
+
+// ==================== REWARDS ====================
+rewards "performance"
+    [tick] ego_pos = 10 & no_collision : 100;
+    [tick] ego_speed = 0 & time_left > 0 & ego_pos < 10 : 5;
+    [] braking & !emergency_brake & (early_ped_danger | early_inc_danger) & ego_pos < 10 : 40;
+    [cross] !collision_imminent & no_collision & ego_pos < 10 : 20;
+    [] emergency_brake & ego_pos < 10 : 10;
+    [tick] !collision_imminent & ego_speed > 0 & ego_pos < 10 : 8;
+endrewards
+
+rewards "decision_reactivity_performance"
+
+    [] (early_ped_danger | early_inc_danger) & braking & reaction_time <= 0.6 & !collision_imminent : 80; 
+    [] (early_ped_danger | early_inc_danger) & braking & reaction_time > 0.6 & reaction_time <= 0.7 : 60;
+    [] (early_ped_danger | early_inc_danger) & braking & reaction_time > 0.7 : 40;
+
+    [] emergency_brake & collision_imminent & reaction_time <= 0.6 : 70;
+    [] emergency_brake & collision_imminent & reaction_time > 0.6 & reaction_time <= 0.7 : 50;
+    [] emergency_brake & collision_imminent & reaction_time > 0.7 : 30;
+
+
+    [] ego_pos = 10 & no_collision & reaction_time <= 0.6 : 100;
+    [] ego_pos = 10 & no_collision & reaction_time > 0.6 : 80;
+
+    [] (ego_speed = 0) & collision_imminent & (ego_pos < 10) & (early_ped_danger | early_inc_danger) & reaction_time <= 0.6 : 60;
+    [] (ego_speed = 0) & collision_imminent & (ego_pos < 10) & (early_ped_danger | early_inc_danger) & reaction_time > 0.6 : 45;
+
+    [tick] !collision_imminent & ego_speed > 0 & ego_pos < 10 : 10;
+endrewards
+
+
+// ==================== LABELS ====================
+label "collision" = (ego_pos = 11);
+label "ped_collision" = (ego_pos = 11) & (ped_pos = 11);
+label "incoming_collision" = (ego_pos = 11) & (inc_pos = 11);
+label "safe_complete" = (ego_pos = 10);
+label "emergency" = emergency_brake;
+label "at_intersection" = (ego_pos >= 6) & (ego_pos <= 9);
+label "ped_crossing" = (ped_pos >= 7) & (ped_pos <= 9);
+label "danger_zone" = collision_imminent;
+label "stopped_safely" = (ego_speed = 0) & collision_imminent & (ego_pos < 10);
+label "aggressive_incoming" = (inc_behavior = 1) & (inc_pos >= 3);
+label "no_collision" = no_collision;
