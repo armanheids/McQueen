@@ -1,14 +1,14 @@
-# McQueen Framework
+# McQueenGuard Framework
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![CARLA](https://img.shields.io/badge/CARLA-0.9.13-orange.svg)](https://carla.org/)
 
-**McQueen** is a self-driving framework for runtime safety assurance that integrates model-based verification with adaptive model-learning for autonomous vehicles.
+**McQueenGuard** is a self-driving framework for runtime safety assurance that integrates model-based verification with adaptive model-learning for autonomous vehicles.
 
 ## 🎯 Overview
 
-McQueen combines formal verification with machine learning to provide real-time safety guarantees for self-driving cars. The framework employs probabilistic model checking (using PRISM) to verify safety and performance properties, while a learning module approximates verification outcomes to reduce computational overhead by up to 70%.
+McQueenGuard combines formal verification with machine learning to provide real-time safety guarantees for self-driving cars. The framework employs probabilistic model checking (using PRISM) to verify safety and performance properties, while a learning module approximates verification outcomes to reduce computational overhead by up to 70%.
 
 ### Key Features
 
@@ -21,7 +21,7 @@ McQueen combines formal verification with machine learning to provide real-time 
 
 ## 🏗️ Architecture
 
-McQueen consists of three main layers:
+McQueenGuard consists of three main layers:
 
 1. **Simulation and Network Layer**: Built on CARLA and Unreal Engine for high-fidelity simulation
 2. **MAPE-K Runtime Loop**: Handles monitoring, analysis, planning, and execution
