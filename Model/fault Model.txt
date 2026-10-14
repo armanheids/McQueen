@@ -22,6 +22,7 @@ const double LIGHT_REMAINING_TIME = 5.0;
 // WEATHER & SENSOR PARAMETERS
 const double RAIN_INTENSITY;
 const double FOG_DENSITY;
+const double SNOW_INTENSITY;
 const double ROAD_FRICTION;  
 const int TIME_OF_DAY = 1; // 1:Day
 
