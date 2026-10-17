@@ -1,0 +1,2260 @@
+{
+ "overall": [
+  {
+   "method": "McQueenGuard",
+   "episodes": 600,
+   "collision": 1.0,
+   "collision_ci": [
+    0.45908595233918537,
+    2.164383513825451
+   ],
+   "margin_violation": 4.833333333333333,
+   "mv_ci": [
+    3.386067991337791,
+    6.855293319310565
+   ],
+   "n_col": 6,
+   "n_mv": 29,
+   "risk_violation": 14.418655572585942,
+   "audited": 9134,
+   "deadlock": 1.5,
+   "n_dead": 9,
+   "mean_speed": 19.43196438250331,
+   "delay_ratio": 1.6440850199915609,
+   "learned_share": 85.78274760383387,
+   "exact_share": 14.217252396166135,
+   "cons_share": 0.0,
+   "miss": 12.889945193381646,
+   "lat_mean_ep": 49.10272525079841,
+   "lat_mean": 49.1027252507984,
+   "lat_p50": 0.06513650009765115,
+   "lat_p95": 331.17958530025345,
+   "lat_p99": 794.1753978797715,
+   "lat_max": 2601.860147000025
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 600,
+   "collision": 2.0,
+   "collision_ci": [
+    1.1477064060296744,
+    3.463039193478542
+   ],
+   "margin_violation": 9.333333333333334,
+   "mv_ci": [
+    7.257411793779555,
+    11.926692116914909
+   ],
+   "n_col": 12,
+   "n_mv": 56,
+   "risk_violation": 24.014458375691856,
+   "audited": 8853,
+   "deadlock": 2.166666666666667,
+   "n_dead": 13,
+   "mean_speed": 20.35018747575503,
+   "delay_ratio": 1.6515234559159169,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 92.6925968965753,
+   "lat_mean_ep": 334.1849069150001,
+   "lat_mean": 334.18490691500006,
+   "lat_p50": 230.94929800026875,
+   "lat_p95": 911.5260949993171,
+   "lat_p99": 1524.6573049998915,
+   "lat_max": 2601.674866999929
+  },
+  {
+   "method": "VerifAI runtime assurance",
+   "episodes": 600,
+   "collision": 1.5,
+   "collision_ci": [
+    0.791115278835805,
+    2.8259922540006213
+   ],
+   "margin_violation": 3.5000000000000004,
+   "mv_ci": [
+    2.300417477987721,
+    5.291242321535865
+   ],
+   "n_col": 9,
+   "n_mv": 21,
+   "risk_violation": 12.556053811659194,
+   "audited": 11150,
+   "deadlock": 20.833333333333336,
+   "n_dead": 125,
+   "mean_speed": 20.341208649747955,
+   "delay_ratio": 1.5991832239913162,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.06734966660557877,
+   "lat_mean": 0.06734966660557877,
+   "lat_p50": 0.054399999953602673,
+   "lat_p95": 0.12519774975316977,
+   "lat_p99": 0.18246875009708674,
+   "lat_max": 9.52656300023591
+  },
+  {
+   "method": "MPC (Zhang et al. 2022)",
+   "episodes": 600,
+   "collision": 4.5,
+   "collision_ci": [
+    3.1108278765424555,
+    6.468108056324709
+   ],
+   "margin_violation": 9.0,
+   "mv_ci": [
+    6.963349218876427,
+    11.558329314036841
+   ],
+   "n_col": 27,
+   "n_mv": 54,
+   "risk_violation": 21.777269260106788,
+   "audited": 7866,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 24.150914225121728,
+   "delay_ratio": 1.3758113232633107,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.09864169255538674,
+   "lat_mean_ep": 12.364641051339682,
+   "lat_mean": 12.364641051339678,
+   "lat_p50": 9.170302500024263,
+   "lat_p95": 27.452348499957676,
+   "lat_p99": 51.002808879729805,
+   "lat_max": 753.3143150001251
+  },
+  {
+   "method": "Rule-based (IDM + AEB)",
+   "episodes": 600,
+   "collision": 3.166666666666667,
+   "collision_ci": [
+    2.0364748182018033,
+    4.892759603540588
+   ],
+   "margin_violation": 6.0,
+   "mv_ci": [
+    4.365117389432186,
+    8.194732743450347
+   ],
+   "n_col": 19,
+   "n_mv": 36,
+   "risk_violation": 18.02414319411683,
+   "audited": 7207,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 24.966589148421917,
+   "delay_ratio": 1.3675060575970737,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.0016901862448696573,
+   "lat_mean": 0.0016901862448696573,
+   "lat_p50": 0.0009649997991800774,
+   "lat_p95": 0.003231000073355972,
+   "lat_p99": 0.004798320187546771,
+   "lat_max": 8.040532999984862
+  },
+  {
+   "method": "End-to-end RL (PPO)",
+   "episodes": 600,
+   "collision": 1.6666666666666667,
+   "collision_ci": [
+    0.9077631854320565,
+    3.0405570362949668
+   ],
+   "margin_violation": 8.0,
+   "mv_ci": [
+    6.08688484413151,
+    10.447517555438182
+   ],
+   "n_col": 10,
+   "n_mv": 48,
+   "risk_violation": 18.746033760629523,
+   "audited": 7879,
+   "deadlock": 0.16666666666666669,
+   "n_dead": 1,
+   "mean_speed": 22.628971860691113,
+   "delay_ratio": 1.4884285645192845,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.04133629473647942,
+   "lat_mean": 0.04133629473647942,
+   "lat_p50": 0.02883999979985674,
+   "lat_p95": 0.10948795015792714,
+   "lat_p99": 0.1682156500237397,
+   "lat_max": 10.090883999964717
+  }
+ ],
+ "ID": [
+  {
+   "method": "McQueenGuard",
+   "episodes": 360,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    1.0558440816003447
+   ],
+   "margin_violation": 1.1111111111111112,
+   "mv_ci": [
+    0.43290733267216713,
+    2.8216957693370586
+   ],
+   "n_col": 0,
+   "n_mv": 4,
+   "risk_violation": 9.508771929824562,
+   "audited": 5700,
+   "deadlock": 1.9444444444444444,
+   "n_dead": 7,
+   "mean_speed": 18.62994853265912,
+   "delay_ratio": 1.6440436554674902,
+   "learned_share": 95.47932914624887,
+   "exact_share": 4.520670853751121,
+   "cons_share": 0.0,
+   "miss": 4.273931948374629,
+   "lat_mean_ep": 17.597716474634485
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 360,
+   "collision": 0.2777777777777778,
+   "collision_ci": [
+    0.04905017720812478,
+    1.5564836594944405
+   ],
+   "margin_violation": 6.944444444444445,
+   "mv_ci": [
+    4.7476807006433255,
+    10.050407258512529
+   ],
+   "n_col": 1,
+   "n_mv": 25,
+   "risk_violation": 24.16576964477933,
+   "audited": 5574,
+   "deadlock": 3.0555555555555554,
+   "n_dead": 11,
+   "mean_speed": 19.31397416811865,
+   "delay_ratio": 1.6705404999454057,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 94.00327574364664,
+   "lat_mean_ep": 323.6723042530305
+  },
+  {
+   "method": "VerifAI runtime assurance",
+   "episodes": 360,
+   "collision": 0.2777777777777778,
+   "collision_ci": [
+    0.04905017720812478,
+    1.5564836594944405
+   ],
+   "margin_violation": 1.1111111111111112,
+   "mv_ci": [
+    0.43290733267216713,
+    2.8216957693370586
+   ],
+   "n_col": 1,
+   "n_mv": 4,
+   "risk_violation": 12.673879443585781,
+   "audited": 6470,
+   "deadlock": 17.22222222222222,
+   "n_dead": 62,
+   "mean_speed": 20.100190772356978,
+   "delay_ratio": 1.5760839686028747,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.06743090608014823
+  },
+  {
+   "method": "MPC (Zhang et al. 2022)",
+   "episodes": 360,
+   "collision": 0.8333333333333334,
+   "collision_ci": [
+    0.2838001057521952,
+    2.4211132411548104
+   ],
+   "margin_violation": 4.722222222222222,
+   "mv_ci": [
+    2.968911468883021,
+    7.431658449455067
+   ],
+   "n_col": 3,
+   "n_mv": 17,
+   "risk_violation": 20.785728602926437,
+   "audited": 4989,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 22.425818046986038,
+   "delay_ratio": 1.4278160364228594,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.14681395806850125,
+   "lat_mean_ep": 13.583071780352624
+  },
+  {
+   "method": "Rule-based (IDM + AEB)",
+   "episodes": 360,
+   "collision": 0.8333333333333334,
+   "collision_ci": [
+    0.2838001057521952,
+    2.4211132411548104
+   ],
+   "margin_violation": 1.9444444444444444,
+   "mv_ci": [
+    0.9449995950304771,
+    3.95867277228541
+   ],
+   "n_col": 3,
+   "n_mv": 7,
+   "risk_violation": 17.45960502692998,
+   "audited": 4456,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 23.77831273341837,
+   "delay_ratio": 1.3627221519694621,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.001859314165300456
+  },
+  {
+   "method": "End-to-end RL (PPO)",
+   "episodes": 360,
+   "collision": 0.8333333333333334,
+   "collision_ci": [
+    0.2838001057521952,
+    2.4211132411548104
+   ],
+   "margin_violation": 5.555555555555555,
+   "mv_ci": [
+    3.6247922198731284,
+    8.424846963771621
+   ],
+   "n_col": 3,
+   "n_mv": 20,
+   "risk_violation": 17.76302137372899,
+   "audited": 4819,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 22.02191781119413,
+   "delay_ratio": 1.475889848175415,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.04200001511456814
+  }
+ ],
+ "OOD": [
+  {
+   "method": "McQueenGuard",
+   "episodes": 240,
+   "collision": 2.5,
+   "collision_ci": [
+    1.1506807509485621,
+    5.34599578004533
+   ],
+   "margin_violation": 10.416666666666668,
+   "mv_ci": [
+    7.1556517549886784,
+    14.924912020839564
+   ],
+   "n_col": 6,
+   "n_mv": 25,
+   "risk_violation": 22.568433313919627,
+   "audited": 3434,
+   "deadlock": 0.8333333333333334,
+   "n_dead": 2,
+   "mean_speed": 20.634988157269596,
+   "delay_ratio": 1.6493314675976762,
+   "learned_share": 56.270349753177186,
+   "exact_share": 43.729650246822814,
+   "cons_share": 0.0,
+   "miss": 39.113538493855685,
+   "lat_mean_ep": 144.99098744129083
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 240,
+   "collision": 4.583333333333333,
+   "collision_ci": [
+    2.5782215329808382,
+    8.019477957179987
+   ],
+   "margin_violation": 12.916666666666668,
+   "mv_ci": [
+    9.250908676247239,
+    17.750882650581328
+   ],
+   "n_col": 11,
+   "n_mv": 31,
+   "risk_violation": 23.75724306190912,
+   "audited": 3279,
+   "deadlock": 0.8333333333333334,
+   "n_dead": 2,
+   "mean_speed": 21.904507437209592,
+   "delay_ratio": 1.6297613809400489,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 90.2913561126706,
+   "lat_mean_ep": 353.44461367940806
+  },
+  {
+   "method": "VerifAI runtime assurance",
+   "episodes": 240,
+   "collision": 3.3333333333333335,
+   "collision_ci": [
+    1.6985260309156955,
+    6.43855968374497
+   ],
+   "margin_violation": 7.083333333333333,
+   "mv_ci": [
+    4.46915613971393,
+    11.049770901447214
+   ],
+   "n_col": 8,
+   "n_mv": 17,
+   "risk_violation": 12.393162393162394,
+   "audited": 4680,
+   "deadlock": 26.25,
+   "n_dead": 63,
+   "mean_speed": 20.702735465834433,
+   "delay_ratio": 1.6338460533266135,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.06723568442256254
+  },
+  {
+   "method": "MPC (Zhang et al. 2022)",
+   "episodes": 240,
+   "collision": 10.0,
+   "collision_ci": [
+    6.812304903363428,
+    14.448054280631428
+   ],
+   "margin_violation": 15.416666666666668,
+   "mv_ci": [
+    11.39635895515078,
+    20.526659922678107
+   ],
+   "n_col": 24,
+   "n_mv": 37,
+   "risk_violation": 23.496697949252695,
+   "audited": 2877,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 26.738558492325257,
+   "delay_ratio": 1.3379001955521161,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.015458339774308239,
+   "lat_mean_ep": 10.26066790224214
+  },
+  {
+   "method": "Rule-based (IDM + AEB)",
+   "episodes": 240,
+   "collision": 6.666666666666667,
+   "collision_ci": [
+    4.144854162288712,
+    10.553868287039048
+   ],
+   "margin_violation": 12.083333333333334,
+   "mv_ci": [
+    8.546293107499936,
+    16.815089035661853
+   ],
+   "n_col": 16,
+   "n_mv": 29,
+   "risk_violation": 18.938567793529625,
+   "audited": 2751,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 26.749003770927235,
+   "delay_ratio": 1.3732330829166774,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.0014153027785264527
+  },
+  {
+   "method": "End-to-end RL (PPO)",
+   "episodes": 240,
+   "collision": 2.9166666666666665,
+   "collision_ci": [
+    1.4198549663490416,
+    5.897026156478235
+   ],
+   "margin_violation": 11.666666666666666,
+   "mv_ci": [
+    8.196205521476754,
+    16.344972029851647
+   ],
+   "n_col": 7,
+   "n_mv": 28,
+   "risk_violation": 20.294117647058822,
+   "audited": 3060,
+   "deadlock": 0.4166666666666667,
+   "n_dead": 1,
+   "mean_speed": 23.539552934936598,
+   "delay_ratio": 1.5329083672311217,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.040327304289965574
+  }
+ ],
+ "mcnemar_mv": {
+  "McQueenGuard (exact only)": [
+   14,
+   41,
+   0.00035528111863147854
+  ],
+  "VerifAI runtime assurance": [
+   20,
+   12,
+   0.21532714972272515
+  ],
+  "MPC (Zhang et al. 2022)": [
+   12,
+   37,
+   0.0004697573180081349
+  ],
+  "Rule-based (IDM + AEB)": [
+   15,
+   22,
+   0.3240086000878364
+  ],
+  "End-to-end RL (PPO)": [
+   18,
+   37,
+   0.014453833533827728
+  ]
+ },
+ "mcnemar_col": {
+  "McQueenGuard (exact only)": [
+   2,
+   8,
+   0.109375
+  ],
+  "VerifAI runtime assurance": [
+   5,
+   8,
+   0.5810546875
+  ],
+  "MPC (Zhang et al. 2022)": [
+   0,
+   21,
+   9.5367431640625e-07
+  ],
+  "Rule-based (IDM + AEB)": [
+   2,
+   15,
+   0.002349853515625
+  ],
+  "End-to-end RL (PPO)": [
+   5,
+   9,
+   0.4239501953125
+  ]
+ },
+ "by_category": [
+  {
+   "method": "McQueenGuard",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 0.0,
+   "mv_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "n_col": 0,
+   "n_mv": 0,
+   "risk_violation": 4.343971631205674,
+   "audited": 1128,
+   "deadlock": 1.6666666666666667,
+   "n_dead": 1,
+   "mean_speed": 14.70374301663536,
+   "delay_ratio": 1.4091829623821752,
+   "learned_share": 97.5507112195943,
+   "exact_share": 2.4492887804056895,
+   "cons_share": 0.0,
+   "miss": 2.424038380607693,
+   "lat_mean_ep": 11.447154126082102,
+   "category": "Clear (10-30)"
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 1.6666666666666667,
+   "mv_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "n_col": 0,
+   "n_mv": 1,
+   "risk_violation": 15.986099044309297,
+   "audited": 1151,
+   "deadlock": 1.6666666666666667,
+   "n_dead": 1,
+   "mean_speed": 14.912505357872185,
+   "delay_ratio": 1.4027111385060995,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 98.48270995059985,
+   "lat_mean_ep": 442.39548546185625,
+   "category": "Clear (10-30)"
+  },
+  {
+   "method": "VerifAI runtime assurance",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 0.0,
+   "mv_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "n_col": 0,
+   "n_mv": 0,
+   "risk_violation": 9.433962264150944,
+   "audited": 1431,
+   "deadlock": 20.0,
+   "n_dead": 12,
+   "mean_speed": 13.717026130169211,
+   "delay_ratio": 1.4348285733328763,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.06807531691159055,
+   "category": "Clear (10-30)"
+  },
+  {
+   "method": "MPC (Zhang et al. 2022)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 3.3333333333333335,
+   "mv_ci": [
+    0.9189126490150246,
+    11.363987528925378
+   ],
+   "n_col": 0,
+   "n_mv": 2,
+   "risk_violation": 14.474929044465469,
+   "audited": 1057,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 16.600763224042247,
+   "delay_ratio": 1.2900264823789656,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.3149204187590433,
+   "lat_mean_ep": 16.76357732879375,
+   "category": "Clear (10-30)"
+  },
+  {
+   "method": "Rule-based (IDM + AEB)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 0.0,
+   "mv_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "n_col": 0,
+   "n_mv": 0,
+   "risk_violation": 12.056737588652481,
+   "audited": 987,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 16.80366811372208,
+   "delay_ratio": 1.2784474883210715,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.0013571728951899142,
+   "category": "Clear (10-30)"
+  },
+  {
+   "method": "End-to-end RL (PPO)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 5.0,
+   "mv_ci": [
+    1.714919117914121,
+    13.700734625099836
+   ],
+   "n_col": 0,
+   "n_mv": 3,
+   "risk_violation": 13.20582877959927,
+   "audited": 1098,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 15.307975293754852,
+   "delay_ratio": 1.4072464801221143,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.042244961192774634,
+   "category": "Clear (10-30)"
+  },
+  {
+   "method": "McQueenGuard",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 3.3333333333333335,
+   "mv_ci": [
+    0.9189126490150246,
+    11.363987528925378
+   ],
+   "n_col": 0,
+   "n_mv": 2,
+   "risk_violation": 12.987012987012987,
+   "audited": 847,
+   "deadlock": 5.0,
+   "n_dead": 3,
+   "mean_speed": 20.842484390696274,
+   "delay_ratio": 2.097699344972716,
+   "learned_share": 95.07580839930229,
+   "exact_share": 4.924191600697705,
+   "cons_share": 0.0,
+   "miss": 4.42774721588622,
+   "lat_mean_ep": 35.84989151241156,
+   "category": "Clear (35-50)"
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 1.6666666666666667,
+   "mv_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "n_col": 0,
+   "n_mv": 1,
+   "risk_violation": 23.13664596273292,
+   "audited": 644,
+   "deadlock": 5.0,
+   "n_dead": 3,
+   "mean_speed": 24.574638077860836,
+   "delay_ratio": 1.9527100900989218,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 90.09640666082385,
+   "lat_mean_ep": 740.5699016573299,
+   "category": "Clear (35-50)"
+  },
+  {
+   "method": "VerifAI runtime assurance",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 1.6666666666666667,
+   "mv_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "n_col": 0,
+   "n_mv": 1,
+   "risk_violation": 17.918088737201366,
+   "audited": 586,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 26.974471855148934,
+   "delay_ratio": 1.7354763543919038,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.06831860234839825,
+   "category": "Clear (35-50)"
+  },
+  {
+   "method": "MPC (Zhang et al. 2022)",
+   "episodes": 60,
+   "collision": 3.3333333333333335,
+   "collision_ci": [
+    0.9189126490150246,
+    11.363987528925378
+   ],
+   "margin_violation": 8.333333333333332,
+   "mv_ci": [
+    3.611992405048589,
+    18.06916846811248
+   ],
+   "n_col": 2,
+   "n_mv": 5,
+   "risk_violation": 26.557377049180328,
+   "audited": 610,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 28.753388217105144,
+   "delay_ratio": 1.6449349642553326,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.6119772694157074,
+   "lat_mean_ep": 18.391657202098752,
+   "category": "Clear (35-50)"
+  },
+  {
+   "method": "Rule-based (IDM + AEB)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 0.0,
+   "mv_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "n_col": 0,
+   "n_mv": 0,
+   "risk_violation": 20.84942084942085,
+   "audited": 518,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 30.53510752988917,
+   "delay_ratio": 1.4889577320134881,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.0027666132937918743,
+   "category": "Clear (35-50)"
+  },
+  {
+   "method": "End-to-end RL (PPO)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 1.6666666666666667,
+   "mv_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "n_col": 0,
+   "n_mv": 1,
+   "risk_violation": 17.72805507745267,
+   "audited": 581,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 27.623664716767525,
+   "delay_ratio": 1.7354763543919038,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.045331684298711455,
+   "category": "Clear (35-50)"
+  },
+  {
+   "method": "McQueenGuard",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 0.0,
+   "mv_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "n_col": 0,
+   "n_mv": 0,
+   "risk_violation": 5.560458958517211,
+   "audited": 1133,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 14.6265828554211,
+   "delay_ratio": 1.487274244981431,
+   "learned_share": 97.07729281339638,
+   "exact_share": 2.9227071866036125,
+   "cons_share": 0.0,
+   "miss": 2.821924180169005,
+   "lat_mean_ep": 6.679277907744824,
+   "category": "Fog (10-30)"
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 3.3333333333333335,
+   "mv_ci": [
+    0.9189126490150246,
+    11.363987528925378
+   ],
+   "n_col": 0,
+   "n_mv": 2,
+   "risk_violation": 17.826825127334466,
+   "audited": 1178,
+   "deadlock": 1.6666666666666667,
+   "n_dead": 1,
+   "mean_speed": 14.661176040418427,
+   "delay_ratio": 1.4206077154363281,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 93.87387387387388,
+   "lat_mean_ep": 216.1340171988703,
+   "category": "Fog (10-30)"
+  },
+  {
+   "method": "VerifAI runtime assurance",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 0.0,
+   "mv_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "n_col": 0,
+   "n_mv": 0,
+   "risk_violation": 8.33744449925999,
+   "audited": 2027,
+   "deadlock": 65.0,
+   "n_dead": 39,
+   "mean_speed": 10.180942110447983,
+   "delay_ratio": 1.3493660612238771,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.06526947121055654,
+   "category": "Fog (10-30)"
+  },
+  {
+   "method": "MPC (Zhang et al. 2022)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 5.0,
+   "mv_ci": [
+    1.714919117914121,
+    13.700734625099836
+   ],
+   "n_col": 0,
+   "n_mv": 3,
+   "risk_violation": 18.67924528301887,
+   "audited": 1060,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 16.284797478828754,
+   "delay_ratio": 1.3217571480196328,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.008475294516484448,
+   "lat_mean_ep": 12.216662927705544,
+   "category": "Fog (10-30)"
+  },
+  {
+   "method": "Rule-based (IDM + AEB)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 1.6666666666666667,
+   "mv_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "n_col": 0,
+   "n_mv": 1,
+   "risk_violation": 15.869786368260428,
+   "audited": 983,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 17.056119510562457,
+   "delay_ratio": 1.3128364896804006,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.0015197894644842823,
+   "category": "Fog (10-30)"
+  },
+  {
+   "method": "End-to-end RL (PPO)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 10.0,
+   "mv_ci": [
+    4.664219945723587,
+    20.149694492511045
+   ],
+   "n_col": 0,
+   "n_mv": 6,
+   "risk_violation": 18.71968962172648,
+   "audited": 1031,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 16.152792175100352,
+   "delay_ratio": 1.3749261476165906,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.03878079279892449,
+   "category": "Fog (10-30)"
+  },
+  {
+   "method": "McQueenGuard",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 1.6666666666666667,
+   "mv_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "n_col": 0,
+   "n_mv": 1,
+   "risk_violation": 13.934426229508198,
+   "audited": 732,
+   "deadlock": 5.0,
+   "n_dead": 3,
+   "mean_speed": 23.26869202563052,
+   "delay_ratio": 1.7888172999900576,
+   "learned_share": 92.51652834435222,
+   "exact_share": 7.4834716556477705,
+   "cons_share": 0.0,
+   "miss": 6.780137853425235,
+   "lat_mean_ep": 27.330947702631168,
+   "category": "Fog (35-50)"
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 60,
+   "collision": 1.6666666666666667,
+   "collision_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "margin_violation": 11.666666666666666,
+   "mv_ci": [
+    5.767647403450049,
+    22.17902059985814
+   ],
+   "n_col": 1,
+   "n_mv": 7,
+   "risk_violation": 34.54810495626822,
+   "audited": 686,
+   "deadlock": 3.3333333333333335,
+   "n_dead": 2,
+   "mean_speed": 23.94650938136248,
+   "delay_ratio": 1.76824493448547,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 87.61251607372482,
+   "lat_mean_ep": 338.0448305113429,
+   "category": "Fog (35-50)"
+  },
+  {
+   "method": "VerifAI runtime assurance",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 0.0,
+   "mv_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "n_col": 0,
+   "n_mv": 0,
+   "risk_violation": 20.56239015817223,
+   "audited": 569,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 27.45257213147609,
+   "delay_ratio": 1.6743291452158697,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.06803964089839865,
+   "category": "Fog (35-50)"
+  },
+  {
+   "method": "MPC (Zhang et al. 2022)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 3.3333333333333335,
+   "mv_ci": [
+    0.9189126490150246,
+    11.363987528925378
+   ],
+   "n_col": 0,
+   "n_mv": 2,
+   "risk_violation": 26.31578947368421,
+   "audited": 608,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 28.045452928833996,
+   "delay_ratio": 1.5667761164107143,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.014480162177816391,
+   "lat_mean_ep": 12.618302269622191,
+   "category": "Fog (35-50)"
+  },
+  {
+   "method": "Rule-based (IDM + AEB)",
+   "episodes": 60,
+   "collision": 3.3333333333333335,
+   "collision_ci": [
+    0.9189126490150246,
+    11.363987528925378
+   ],
+   "margin_violation": 3.3333333333333335,
+   "mv_ci": [
+    0.9189126490150246,
+    11.363987528925378
+   ],
+   "n_col": 2,
+   "n_mv": 2,
+   "risk_violation": 22.373540856031127,
+   "audited": 514,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 30.324730647375517,
+   "delay_ratio": 1.4746247944644653,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.002665917625586481,
+   "category": "Fog (35-50)"
+  },
+  {
+   "method": "End-to-end RL (PPO)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 3.3333333333333335,
+   "mv_ci": [
+    0.9189126490150246,
+    11.363987528925378
+   ],
+   "n_col": 0,
+   "n_mv": 2,
+   "risk_violation": 20.535714285714285,
+   "audited": 560,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 28.042189207791235,
+   "delay_ratio": 1.6412591492888948,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.04322728266854474,
+   "category": "Fog (35-50)"
+  },
+  {
+   "method": "McQueenGuard",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 0.0,
+   "mv_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "n_col": 0,
+   "n_mv": 0,
+   "risk_violation": 8.398950131233596,
+   "audited": 1143,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 14.823662888017246,
+   "delay_ratio": 1.4551871654932462,
+   "learned_share": 96.4471618606957,
+   "exact_share": 3.552838139304305,
+   "cons_share": 0.0,
+   "miss": 3.3628026109229117,
+   "lat_mean_ep": 9.442498017183167,
+   "category": "Rain (10-30)"
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 13.333333333333334,
+   "mv_ci": [
+    6.914026978309641,
+    24.165394590072104
+   ],
+   "n_col": 0,
+   "n_mv": 8,
+   "risk_violation": 19.686411149825783,
+   "audited": 1148,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 15.101233981465896,
+   "delay_ratio": 1.4328648611496497,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 94.13165872672153,
+   "lat_mean_ep": 259.3276277272819,
+   "category": "Rain (10-30)"
+  },
+  {
+   "method": "VerifAI runtime assurance",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 1.6666666666666667,
+   "mv_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "n_col": 0,
+   "n_mv": 1,
+   "risk_violation": 13.248204309656824,
+   "audited": 1253,
+   "deadlock": 16.666666666666664,
+   "n_dead": 10,
+   "mean_speed": 15.34575249220923,
+   "delay_ratio": 1.3795880349165939,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.06587799088669381,
+   "category": "Rain (10-30)"
+  },
+  {
+   "method": "MPC (Zhang et al. 2022)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 3.3333333333333335,
+   "mv_ci": [
+    0.9189126490150246,
+    11.363987528925378
+   ],
+   "n_col": 0,
+   "n_mv": 2,
+   "risk_violation": 17.76061776061776,
+   "audited": 1036,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 16.808151246543304,
+   "delay_ratio": 1.3263317953035583,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 10.155334823327536,
+   "category": "Rain (10-30)"
+  },
+  {
+   "method": "Rule-based (IDM + AEB)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 1.6666666666666667,
+   "mv_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "n_col": 0,
+   "n_mv": 1,
+   "risk_violation": 15.935828877005347,
+   "audited": 935,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 17.89778432327843,
+   "delay_ratio": 1.25255705277658,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.001638395841956263,
+   "category": "Rain (10-30)"
+  },
+  {
+   "method": "End-to-end RL (PPO)",
+   "episodes": 60,
+   "collision": 3.3333333333333335,
+   "collision_ci": [
+    0.9189126490150246,
+    11.363987528925378
+   ],
+   "margin_violation": 10.0,
+   "mv_ci": [
+    4.664219945723587,
+    20.149694492511045
+   ],
+   "n_col": 2,
+   "n_mv": 6,
+   "risk_violation": 17.707267144319346,
+   "audited": 977,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 17.056362216828248,
+   "delay_ratio": 1.3250080263953192,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.041159832991578486,
+   "category": "Rain (10-30)"
+  },
+  {
+   "method": "McQueenGuard",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 1.6666666666666667,
+   "mv_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "n_col": 0,
+   "n_mv": 1,
+   "risk_violation": 17.01534170153417,
+   "audited": 717,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 23.514526019554246,
+   "delay_ratio": 1.8717753569630777,
+   "learned_share": 90.43157733067117,
+   "exact_share": 9.568422669328829,
+   "cons_share": 0.0,
+   "miss": 9.307326063584703,
+   "lat_mean_ep": 34.09093993825188,
+   "category": "Rain (35-50)"
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 10.0,
+   "mv_ci": [
+    4.664219945723587,
+    20.149694492511045
+   ],
+   "n_col": 0,
+   "n_mv": 6,
+   "risk_violation": 44.458930899608866,
+   "audited": 767,
+   "deadlock": 6.666666666666667,
+   "n_dead": 4,
+   "mean_speed": 22.687782169732095,
+   "delay_ratio": 1.875114223328807,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 96.77682578539371,
+   "lat_mean_ep": 343.381994747415,
+   "category": "Rain (35-50)"
+  },
+  {
+   "method": "VerifAI runtime assurance",
+   "episodes": 60,
+   "collision": 1.6666666666666667,
+   "collision_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "margin_violation": 3.3333333333333335,
+   "mv_ci": [
+    0.9189126490150246,
+    11.363987528925378
+   ],
+   "n_col": 1,
+   "n_mv": 2,
+   "risk_violation": 21.192052980132452,
+   "audited": 604,
+   "deadlock": 1.6666666666666667,
+   "n_dead": 1,
+   "mean_speed": 26.930379914690413,
+   "delay_ratio": 1.6764655226022427,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.07415743474191346,
+   "category": "Rain (35-50)"
+  },
+  {
+   "method": "MPC (Zhang et al. 2022)",
+   "episodes": 60,
+   "collision": 1.6666666666666667,
+   "collision_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "margin_violation": 5.0,
+   "mv_ci": [
+    1.714919117914121,
+    13.700734625099836
+   ],
+   "n_col": 1,
+   "n_mv": 3,
+   "risk_violation": 29.12621359223301,
+   "audited": 618,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 28.062355186562783,
+   "delay_ratio": 1.6369205009385681,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.01426126640045636,
+   "lat_mean_ep": 12.430350095835513,
+   "category": "Rain (35-50)"
+  },
+  {
+   "method": "Rule-based (IDM + AEB)",
+   "episodes": 60,
+   "collision": 1.6666666666666667,
+   "collision_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "margin_violation": 5.0,
+   "mv_ci": [
+    1.714919117914121,
+    13.700734625099836
+   ],
+   "n_col": 1,
+   "n_mv": 3,
+   "risk_violation": 25.240847784200387,
+   "audited": 519,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 30.052466275682562,
+   "delay_ratio": 1.525947897140178,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.0020923502102433928,
+   "category": "Rain (35-50)"
+  },
+  {
+   "method": "End-to-end RL (PPO)",
+   "episodes": 60,
+   "collision": 1.6666666666666667,
+   "collision_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "margin_violation": 3.3333333333333335,
+   "mv_ci": [
+    0.9189126490150246,
+    11.363987528925378
+   ],
+   "n_col": 1,
+   "n_mv": 2,
+   "risk_violation": 22.202797202797203,
+   "audited": 572,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 27.94852325692256,
+   "delay_ratio": 1.6676706121883658,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.04421924130967974,
+   "category": "Rain (35-50)"
+  },
+  {
+   "method": "McQueenGuard",
+   "episodes": 60,
+   "collision": 3.3333333333333335,
+   "collision_ci": [
+    0.9189126490150246,
+    11.363987528925378
+   ],
+   "margin_violation": 10.0,
+   "mv_ci": [
+    4.664219945723587,
+    20.149694492511045
+   ],
+   "n_col": 2,
+   "n_mv": 6,
+   "risk_violation": 33.11258278145695,
+   "audited": 604,
+   "deadlock": 1.6666666666666667,
+   "n_dead": 1,
+   "mean_speed": 27.577160564566146,
+   "delay_ratio": 2.1007156890271697,
+   "learned_share": 77.82886334610473,
+   "exact_share": 22.171136653895275,
+   "cons_share": 0.0,
+   "miss": 18.9272030651341,
+   "lat_mean_ep": 108.9961911244038,
+   "category": "High speed (50-60)"
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 60,
+   "collision": 3.3333333333333335,
+   "collision_ci": [
+    0.9189126490150246,
+    11.363987528925378
+   ],
+   "margin_violation": 11.666666666666666,
+   "mv_ci": [
+    5.767647403450049,
+    22.17902059985814
+   ],
+   "n_col": 2,
+   "n_mv": 7,
+   "risk_violation": 35.826771653543304,
+   "audited": 508,
+   "deadlock": 3.3333333333333335,
+   "n_dead": 2,
+   "mean_speed": 30.06390891411298,
+   "delay_ratio": 1.9673576874319623,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 86.69590643274854,
+   "lat_mean_ep": 486.11279599859506,
+   "category": "High speed (50-60)"
+  },
+  {
+   "method": "VerifAI runtime assurance",
+   "episodes": 60,
+   "collision": 1.6666666666666667,
+   "collision_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "margin_violation": 3.3333333333333335,
+   "mv_ci": [
+    0.9189126490150246,
+    11.363987528925378
+   ],
+   "n_col": 1,
+   "n_mv": 2,
+   "risk_violation": 19.962335216572505,
+   "audited": 531,
+   "deadlock": 3.3333333333333335,
+   "n_dead": 2,
+   "mean_speed": 32.03074511371078,
+   "delay_ratio": 1.8504756243712854,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.06704539933392041,
+   "category": "High speed (50-60)"
+  },
+  {
+   "method": "MPC (Zhang et al. 2022)",
+   "episodes": 60,
+   "collision": 8.333333333333332,
+   "collision_ci": [
+    3.611992405048589,
+    18.06916846811248
+   ],
+   "margin_violation": 13.333333333333334,
+   "mv_ci": [
+    6.914026978309641,
+    24.165394590072104
+   ],
+   "n_col": 5,
+   "n_mv": 8,
+   "risk_violation": 34.490238611713664,
+   "audited": 461,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 37.65271745626102,
+   "delay_ratio": 1.4920230982359601,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.07582938388625593,
+   "lat_mean_ep": 14.82208344530306,
+   "category": "High speed (50-60)"
+  },
+  {
+   "method": "Rule-based (IDM + AEB)",
+   "episodes": 60,
+   "collision": 5.0,
+   "collision_ci": [
+    1.714919117914121,
+    13.700734625099836
+   ],
+   "margin_violation": 10.0,
+   "mv_ci": [
+    4.664219945723587,
+    20.149694492511045
+   ],
+   "n_col": 3,
+   "n_mv": 6,
+   "risk_violation": 25.25,
+   "audited": 400,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 38.52659157867142,
+   "delay_ratio": 1.5044764850775696,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.0014537258590171856,
+   "category": "High speed (50-60)"
+  },
+  {
+   "method": "End-to-end RL (PPO)",
+   "episodes": 60,
+   "collision": 1.6666666666666667,
+   "collision_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "margin_violation": 5.0,
+   "mv_ci": [
+    1.714919117914121,
+    13.700734625099836
+   ],
+   "n_col": 1,
+   "n_mv": 3,
+   "risk_violation": 20.930232558139537,
+   "audited": 473,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 33.44387972651409,
+   "delay_ratio": 1.8559610766898575,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.04321598825773607,
+   "category": "High speed (50-60)"
+  },
+  {
+   "method": "McQueenGuard",
+   "episodes": 60,
+   "collision": 6.666666666666667,
+   "collision_ci": [
+    2.6228274143197923,
+    15.925579893767722
+   ],
+   "margin_violation": 18.333333333333332,
+   "mv_ci": [
+    10.557689037136129,
+    29.919993226466286
+   ],
+   "n_col": 4,
+   "n_mv": 11,
+   "risk_violation": 9.501187648456057,
+   "audited": 842,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 20.137764958852078,
+   "delay_ratio": 1.6162784252918274,
+   "learned_share": 95.95795269678388,
+   "exact_share": 4.042047303216118,
+   "cons_share": 0.0,
+   "miss": 3.8293079714679013,
+   "lat_mean_ep": 22.85757234500919,
+   "category": "Novel trajectory"
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 60,
+   "collision": 13.333333333333334,
+   "collision_ci": [
+    6.914026978309641,
+    24.165394590072104
+   ],
+   "margin_violation": 18.333333333333332,
+   "mv_ci": [
+    10.557689037136129,
+    29.919993226466286
+   ],
+   "n_col": 8,
+   "n_mv": 11,
+   "risk_violation": 14.17624521072797,
+   "audited": 783,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 22.3240160981063,
+   "delay_ratio": 1.5605588965426582,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 95.15441959531417,
+   "lat_mean_ep": 461.3868159663594,
+   "category": "Novel trajectory"
+  },
+  {
+   "method": "VerifAI runtime assurance",
+   "episodes": 60,
+   "collision": 6.666666666666667,
+   "collision_ci": [
+    2.6228274143197923,
+    15.925579893767722
+   ],
+   "margin_violation": 15.0,
+   "mv_ci": [
+    8.097349242295689,
+    26.114825891159615
+   ],
+   "n_col": 4,
+   "n_mv": 9,
+   "risk_violation": 9.592760180995475,
+   "audited": 1105,
+   "deadlock": 20.0,
+   "n_dead": 12,
+   "mean_speed": 20.117777072709195,
+   "delay_ratio": 1.538812400892799,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.0696638961626936,
+   "category": "Novel trajectory"
+  },
+  {
+   "method": "MPC (Zhang et al. 2022)",
+   "episodes": 60,
+   "collision": 23.333333333333332,
+   "collision_ci": [
+    14.43943161843107,
+    35.436511340392016
+   ],
+   "margin_violation": 25.0,
+   "mv_ci": [
+    15.77638557841185,
+    37.2323109454848
+   ],
+   "n_col": 14,
+   "n_mv": 15,
+   "risk_violation": 16.224648985959437,
+   "audited": 641,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 27.206666540736407,
+   "delay_ratio": 1.1980677034845066,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.013875398917718884,
+   "lat_mean_ep": 10.221539218123777,
+   "category": "Novel trajectory"
+  },
+  {
+   "method": "Rule-based (IDM + AEB)",
+   "episodes": 60,
+   "collision": 13.333333333333334,
+   "collision_ci": [
+    6.914026978309641,
+    24.165394590072104
+   ],
+   "margin_violation": 20.0,
+   "mv_ci": [
+    11.828389736858965,
+    31.782046091817012
+   ],
+   "n_col": 8,
+   "n_mv": 12,
+   "risk_violation": 15.164520743919885,
+   "audited": 699,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 24.358701017845497,
+   "delay_ratio": 1.3894429323949211,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.0011054196994598933,
+   "category": "Novel trajectory"
+  },
+  {
+   "method": "End-to-end RL (PPO)",
+   "episodes": 60,
+   "collision": 6.666666666666667,
+   "collision_ci": [
+    2.6228274143197923,
+    15.925579893767722
+   ],
+   "margin_violation": 16.666666666666664,
+   "mv_ci": [
+    9.313077201321033,
+    28.03185149720783
+   ],
+   "n_col": 4,
+   "n_mv": 10,
+   "risk_violation": 14.04639175257732,
+   "audited": 776,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 22.28391006823102,
+   "delay_ratio": 1.4621017938557863,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.04085956249408977,
+   "category": "Novel trajectory"
+  },
+  {
+   "method": "McQueenGuard",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 6.666666666666667,
+   "mv_ci": [
+    2.6228274143197923,
+    15.925579893767722
+   ],
+   "n_col": 0,
+   "n_mv": 4,
+   "risk_violation": 20.235934664246823,
+   "audited": 1102,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 15.985611695087035,
+   "delay_ratio": 1.5411546173753536,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 97.05608924697862,
+   "lat_mean_ep": 370.1760730099446,
+   "category": "High noise"
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 60,
+   "collision": 1.6666666666666667,
+   "collision_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "margin_violation": 15.0,
+   "mv_ci": [
+    8.097349242295689,
+    26.114825891159615
+   ],
+   "n_col": 1,
+   "n_mv": 9,
+   "risk_violation": 20.515179392824287,
+   "audited": 1087,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 16.38018910389246,
+   "delay_ratio": 1.5559390094783847,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 96.94132334581772,
+   "lat_mean_ep": 367.0776144088888,
+   "category": "High noise"
+  },
+  {
+   "method": "VerifAI runtime assurance",
+   "episodes": 60,
+   "collision": 1.6666666666666667,
+   "collision_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "margin_violation": 5.0,
+   "mv_ci": [
+    1.714919117914121,
+    13.700734625099836
+   ],
+   "n_col": 1,
+   "n_mv": 3,
+   "risk_violation": 9.008528784648188,
+   "audited": 1876,
+   "deadlock": 56.666666666666664,
+   "n_dead": 34,
+   "mean_speed": 12.025557473934775,
+   "delay_ratio": 1.748055369066591,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.06681564818825057,
+   "category": "High noise"
+  },
+  {
+   "method": "MPC (Zhang et al. 2022)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 1.6666666666666667,
+   "mv_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "n_col": 0,
+   "n_mv": 1,
+   "risk_violation": 15.947843530591776,
+   "audited": 997,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 18.51842693990161,
+   "delay_ratio": 1.377890145363723,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 8.077489645181677,
+   "category": "High noise"
+  },
+  {
+   "method": "Rule-based (IDM + AEB)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 1.6666666666666667,
+   "mv_ci": [
+    0.2948083860873682,
+    8.855338226779477
+   ],
+   "n_col": 0,
+   "n_mv": 1,
+   "risk_violation": 12.906610703043022,
+   "audited": 953,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 19.16611415727457,
+   "delay_ratio": 1.3278982428001385,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.0014155358088297136,
+   "category": "High noise"
+  },
+  {
+   "method": "End-to-end RL (PPO)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 15.0,
+   "mv_ci": [
+    8.097349242295689,
+    26.114825891159615
+   ],
+   "n_col": 0,
+   "n_mv": 9,
+   "risk_violation": 19.868791002811623,
+   "audited": 1067,
+   "deadlock": 1.6666666666666667,
+   "n_dead": 1,
+   "mean_speed": 16.034479225208234,
+   "delay_ratio": 1.5799533448161924,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.03830573951572065,
+   "category": "High noise"
+  },
+  {
+   "method": "McQueenGuard",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 6.666666666666667,
+   "mv_ci": [
+    2.6228274143197923,
+    15.925579893767722
+   ],
+   "n_col": 0,
+   "n_mv": 4,
+   "risk_violation": 30.69977426636569,
+   "audited": 886,
+   "deadlock": 1.6666666666666667,
+   "n_dead": 1,
+   "mean_speed": 18.839415410573114,
+   "delay_ratio": 1.548099976234962,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 83.62752622154004,
+   "lat_mean_ep": 244.81587270221522,
+   "category": "Unseen weather"
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 60,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    6.017393047793289
+   ],
+   "margin_violation": 6.666666666666667,
+   "mv_ci": [
+    2.6228274143197923,
+    15.925579893767722
+   ],
+   "n_col": 0,
+   "n_mv": 4,
+   "risk_violation": 29.189789123196448,
+   "audited": 901,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 18.849915632726614,
+   "delay_ratio": 1.556026521306033,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 83.71553723267199,
+   "lat_mean_ep": 243.1932187696427,
+   "category": "Unseen weather"
+  },
+  {
+   "method": "VerifAI runtime assurance",
+   "episodes": 60,
+   "collision": 3.3333333333333335,
+   "collision_ci": [
+    0.9189126490150246,
+    11.363987528925378
+   ],
+   "margin_violation": 5.0,
+   "mv_ci": [
+    1.714919117914121,
+    13.700734625099836
+   ],
+   "n_col": 2,
+   "n_mv": 3,
+   "risk_violation": 17.03767123287671,
+   "audited": 1168,
+   "deadlock": 25.0,
+   "n_dead": 15,
+   "mean_speed": 18.636862202982954,
+   "delay_ratio": 1.3933985944300495,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.06571033203497353,
+   "category": "Unseen weather"
+  },
+  {
+   "method": "MPC (Zhang et al. 2022)",
+   "episodes": 60,
+   "collision": 8.333333333333332,
+   "collision_ci": [
+    3.611992405048589,
+    18.06916846811248
+   ],
+   "margin_violation": 21.666666666666668,
+   "mv_ci": [
+    13.122921046407015,
+    33.62026834734252
+   ],
+   "n_col": 5,
+   "n_mv": 13,
+   "risk_violation": 32.64781491002571,
+   "audited": 778,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 23.576423032401987,
+   "delay_ratio": 1.3296040570842484,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 10.330193021853702,
+   "category": "Unseen weather"
+  },
+  {
+   "method": "Rule-based (IDM + AEB)",
+   "episodes": 60,
+   "collision": 8.333333333333332,
+   "collision_ci": [
+    3.611992405048589,
+    18.06916846811248
+   ],
+   "margin_violation": 16.666666666666664,
+   "mv_ci": [
+    9.313077201321033,
+    28.03185149720783
+   ],
+   "n_col": 5,
+   "n_mv": 10,
+   "risk_violation": 27.32474964234621,
+   "audited": 699,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 24.944608329917443,
+   "delay_ratio": 1.2632187412090636,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.0017028649146171905,
+   "category": "Unseen weather"
+  },
+  {
+   "method": "End-to-end RL (PPO)",
+   "episodes": 60,
+   "collision": 3.3333333333333335,
+   "collision_ci": [
+    0.9189126490150246,
+    11.363987528925378
+   ],
+   "margin_violation": 10.0,
+   "mv_ci": [
+    4.664219945723587,
+    20.149694492511045
+   ],
+   "n_col": 2,
+   "n_mv": 6,
+   "risk_violation": 27.016129032258064,
+   "audited": 744,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 22.395942719793048,
+   "delay_ratio": 1.383652093064049,
+   "learned_share": 0.0,
+   "exact_share": 0.0,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.04109424860348988,
+   "category": "Unseen weather"
+  }
+ ]
+}

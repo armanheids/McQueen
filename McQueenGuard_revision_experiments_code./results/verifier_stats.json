@@ -1,0 +1,23 @@
+{
+ "n_total": 10876,
+ "n_train": 7810,
+ "n_cal": 1517,
+ "n_test": 1549,
+ "n_episodes": 280,
+ "mae_p": 0.015252986985664553,
+ "rmse_p": 0.06033964305266209,
+ "mae_u": 0.025850328150573323,
+ "rmse_u": 0.03971290435736159,
+ "p95_abs_err_p": 0.050424855094626644,
+ "max_abs_err_p": 0.892736947747238,
+ "mean_abs_resid_cal": 0.00521175185083356,
+ "eps": 0.018062826965811775,
+ "alpha": 0.05,
+ "coverage_test": 0.9451258876694641,
+ "familiar_rate_test": 0.974176888315042,
+ "admitted_test": 1370,
+ "unsafe_admission_test": 36,
+ "unsafe_admission_rate_test": 0.026277372262773723,
+ "gate_thr": 42.03747364156406,
+ "epochs": 158
+}

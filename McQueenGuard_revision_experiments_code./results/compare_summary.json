@@ -1,0 +1,646 @@
+{
+ "overall": [
+  {
+   "method": "McQueenGuard",
+   "episodes": 300,
+   "collision": 1.0,
+   "collision_ci": [
+    0.34065567627181126,
+    2.898400463506283
+   ],
+   "margin_violation": 3.6666666666666665,
+   "mv_ci": [
+    2.0595091468180673,
+    6.445448699638772
+   ],
+   "risk_violation": 13.782337198929527,
+   "audited": 4484,
+   "risk_mean": 0.042301847376302014,
+   "min_gap_median": 5.27264575962889,
+   "deadlock": 1.0,
+   "mean_speed": 19.749474640114858,
+   "delay_ratio": 1.6341414827875083,
+   "t_clear": 15.8188775510205,
+   "max_decel": 5.741762907486439,
+   "rms_jerk": 7.638974544819612,
+   "learned_share": 86.28332300061996,
+   "miss": 12.350175656127298,
+   "lat_mean": 46.914368349657344,
+   "lat_p50": 0.03774450010496366,
+   "lat_p99": 746.324888979334,
+   "lat_max": 2601.7163299998174
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 300,
+   "collision": 2.0,
+   "collision_ci": [
+    0.9197506067771085,
+    4.294018673005515
+   ],
+   "margin_violation": 9.666666666666666,
+   "mv_ci": [
+    6.8149855923937155,
+    13.538251094090295
+   ],
+   "risk_violation": 24.24863387978142,
+   "audited": 4392,
+   "risk_mean": 0.08393190006531331,
+   "min_gap_median": 3.5919997208343735,
+   "deadlock": 2.0,
+   "mean_speed": 20.35161163190922,
+   "delay_ratio": 1.6807932467695808,
+   "t_clear": 15.504513888888972,
+   "max_decel": 5.764184452002906,
+   "rms_jerk": 7.653012602626862,
+   "learned_share": 0.0,
+   "miss": 92.43691669547182,
+   "lat_mean": 335.416586759249,
+   "lat_p50": 233.1493430001501,
+   "lat_p99": 1524.6573049998915,
+   "lat_max": 2601.674866999929
+  },
+  {
+   "method": "McQueenGuard w/o admission (ablation)",
+   "episodes": 300,
+   "collision": 1.0,
+   "collision_ci": [
+    0.34065567627181126,
+    2.898400463506283
+   ],
+   "margin_violation": 1.3333333333333335,
+   "mv_ci": [
+    0.5196877684679466,
+    3.3776060846449907
+   ],
+   "risk_violation": 14.597954682173652,
+   "audited": 4987,
+   "risk_mean": 0.026401746653537856,
+   "min_gap_median": 4.650857691440882,
+   "deadlock": 7.000000000000001,
+   "mean_speed": 18.83559036418379,
+   "delay_ratio": 1.6350509800315343,
+   "t_clear": 15.732971014492836,
+   "max_decel": 5.740162449893655,
+   "rms_jerk": 7.6680797523639646,
+   "learned_share": 91.31233004832256,
+   "miss": 0.0,
+   "lat_mean": 0.0822191269380351,
+   "lat_p50": 0.0356299999566545,
+   "lat_p99": 0.19571819988414055,
+   "lat_max": 12.289870999893537
+  },
+  {
+   "method": "VerifAI runtime assurance",
+   "episodes": 300,
+   "collision": 1.6666666666666667,
+   "collision_ci": [
+    0.7139372042772194,
+    3.8415943621705604
+   ],
+   "margin_violation": 3.3333333333333335,
+   "mv_ci": [
+    1.8204749873650852,
+    6.02624514575691
+   ],
+   "risk_violation": 13.434535104364326,
+   "audited": 5270,
+   "risk_mean": 0.04338051247101419,
+   "min_gap_median": 8.371329464751181,
+   "deadlock": 17.666666666666668,
+   "mean_speed": 20.848839713126598,
+   "delay_ratio": 1.5952661403070385,
+   "t_clear": 12.676033057851283,
+   "max_decel": 5.73115340570665,
+   "rms_jerk": 11.74097070836475,
+   "learned_share": 0.0,
+   "miss": 0.0,
+   "lat_mean": 0.0620499664605804,
+   "lat_p50": 0.05239999995865219,
+   "lat_p99": 0.15445499991528777,
+   "lat_max": 4.214526999930968
+  },
+  {
+   "method": "MPC (Zhang et al. 2022)",
+   "episodes": 300,
+   "collision": 3.6666666666666665,
+   "collision_ci": [
+    2.0595091468180673,
+    6.445448699638772
+   ],
+   "margin_violation": 9.0,
+   "mv_ci": [
+    6.2589807394965895,
+    12.777780520317735
+   ],
+   "risk_violation": 22.582291400867568,
+   "audited": 3919,
+   "risk_mean": 0.07079267275551888,
+   "min_gap_median": 5.81903560429509,
+   "deadlock": 0.0,
+   "mean_speed": 24.126194163349577,
+   "delay_ratio": 1.38816971540308,
+   "t_clear": 13.930622837370306,
+   "max_decel": 3.4812674670023838,
+   "rms_jerk": 3.058654396995352,
+   "learned_share": 0.0,
+   "miss": 0.18879082885997633,
+   "lat_mean": 15.414508548290888,
+   "lat_p50": 14.10545800001728,
+   "lat_p99": 66.88789055991957,
+   "lat_max": 753.3143150001251
+  },
+  {
+   "method": "Rule-based (IDM + AEB)",
+   "episodes": 300,
+   "collision": 2.666666666666667,
+   "collision_ci": [
+    1.3572906766976816,
+    5.172954029754628
+   ],
+   "margin_violation": 5.0,
+   "mv_ci": [
+    3.0531367290852587,
+    8.084771970710952
+   ],
+   "risk_violation": 18.519553072625698,
+   "audited": 3580,
+   "risk_mean": 0.0621072547375552,
+   "min_gap_median": 5.99694222253632,
+   "deadlock": 0.0,
+   "mean_speed": 24.98273609539441,
+   "delay_ratio": 1.3802332222647835,
+   "t_clear": 12.840924657534297,
+   "max_decel": 3.6283639636411698,
+   "rms_jerk": 3.6284329135199656,
+   "learned_share": 0.0,
+   "miss": 0.0,
+   "lat_mean": 0.001937890077270146,
+   "lat_p50": 0.0009410000529896934,
+   "lat_p99": 0.004599450016939952,
+   "lat_max": 8.040532999984862
+  },
+  {
+   "method": "End-to-end RL (PPO)",
+   "episodes": 300,
+   "collision": 2.0,
+   "collision_ci": [
+    0.9197506067771085,
+    4.294018673005515
+   ],
+   "margin_violation": 7.666666666666666,
+   "mv_ci": [
+    5.162723750301175,
+    11.241086656173778
+   ],
+   "risk_violation": 18.946015424164525,
+   "audited": 3890,
+   "risk_mean": 0.06353653003801213,
+   "min_gap_median": 8.4698485548166,
+   "deadlock": 0.0,
+   "mean_speed": 22.78540016793757,
+   "delay_ratio": 1.4861888363033195,
+   "t_clear": 13.90714285714292,
+   "max_decel": 5.675004087674319,
+   "rms_jerk": 12.315048270638144,
+   "learned_share": 0.0,
+   "miss": 0.0,
+   "lat_mean": 0.03837929733966562,
+   "lat_p50": 0.027782000188381062,
+   "lat_p99": 0.14253754007313474,
+   "lat_max": 10.090883999964717
+  }
+ ],
+ "ID": [
+  {
+   "method": "McQueenGuard",
+   "episodes": 180,
+   "collision": 0.0,
+   "collision_ci": [
+    0,
+    2.089624981505818
+   ],
+   "margin_violation": 0.5555555555555556,
+   "mv_ci": [
+    0.09813408130013804,
+    3.0793839559667266
+   ],
+   "risk_violation": 8.473980309423347,
+   "audited": 2844,
+   "risk_mean": 0.019492339825640415,
+   "min_gap_median": 5.656516682141515,
+   "deadlock": 1.1111111111111112,
+   "mean_speed": 18.496169962095706,
+   "delay_ratio": 1.6724915757157413,
+   "t_clear": 16.507303370786616,
+   "max_decel": 6.119705159960362,
+   "rms_jerk": 7.969386369765453,
+   "learned_share": 95.73530408841278,
+   "miss": 3.976540782425927
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 180,
+   "collision": 0.0,
+   "collision_ci": [
+    0,
+    2.089624981505818
+   ],
+   "margin_violation": 7.222222222222221,
+   "mv_ci": [
+    4.268933217596356,
+    11.963301488803065
+   ],
+   "risk_violation": 23.915381857296524,
+   "audited": 2789,
+   "risk_mean": 0.07959679366633687,
+   "min_gap_median": 3.5392605650729294,
+   "deadlock": 2.7777777777777777,
+   "mean_speed": 19.006404187403785,
+   "delay_ratio": 1.696374787534887,
+   "t_clear": 16.092857142857234,
+   "max_decel": 6.1746010697480544,
+   "rms_jerk": 8.142715741342105,
+   "learned_share": 0.0,
+   "miss": 93.71822033898304
+  },
+  {
+   "method": "McQueenGuard w/o admission (ablation)",
+   "episodes": 180,
+   "collision": 0.0,
+   "collision_ci": [
+    0,
+    2.089624981505818
+   ],
+   "margin_violation": 0.0,
+   "mv_ci": [
+    0,
+    2.089624981505818
+   ],
+   "risk_violation": 17.746686303387335,
+   "audited": 2716,
+   "risk_mean": 0.02922493792495542,
+   "min_gap_median": 4.3829349450139805,
+   "deadlock": 0.0,
+   "mean_speed": 19.364033383678198,
+   "delay_ratio": 1.622850915032087,
+   "t_clear": 15.987222222222318,
+   "max_decel": 6.196587627221124,
+   "rms_jerk": 8.23849117576653,
+   "learned_share": 90.58193683276839,
+   "miss": 0.0
+  },
+  {
+   "method": "VerifAI runtime assurance",
+   "episodes": 180,
+   "collision": 0.5555555555555556,
+   "collision_ci": [
+    0.09813408130013804,
+    3.0793839559667266
+   ],
+   "margin_violation": 1.1111111111111112,
+   "mv_ci": [
+    0.3052310908307383,
+    3.960180002197173
+   ],
+   "risk_violation": 13.566878980891719,
+   "audited": 3140,
+   "risk_mean": 0.038743665593082184,
+   "min_gap_median": 8.368650547718557,
+   "deadlock": 15.0,
+   "mean_speed": 20.076873584027773,
+   "delay_ratio": 1.6047093664314194,
+   "t_clear": 13.444736842105314,
+   "max_decel": 6.113519794453238,
+   "rms_jerk": 12.746440295224092,
+   "learned_share": 0.0,
+   "miss": 0.0
+  },
+  {
+   "method": "MPC (Zhang et al. 2022)",
+   "episodes": 180,
+   "collision": 0.5555555555555556,
+   "collision_ci": [
+    0.09813408130013804,
+    3.0793839559667266
+   ],
+   "margin_violation": 4.444444444444445,
+   "mv_ci": [
+    2.268982119311463,
+    8.523787308282728
+   ],
+   "risk_violation": 21.331194867682438,
+   "audited": 2494,
+   "risk_mean": 0.05903670909856927,
+   "min_gap_median": 5.899735070411419,
+   "deadlock": 0.0,
+   "mean_speed": 22.20905989885347,
+   "delay_ratio": 1.431397920285817,
+   "t_clear": 14.559497206703984,
+   "max_decel": 3.5152685022978996,
+   "rms_jerk": 3.0935293041550986,
+   "learned_share": 0.0,
+   "miss": 0.28286010956353613
+  },
+  {
+   "method": "Rule-based (IDM + AEB)",
+   "episodes": 180,
+   "collision": 0.5555555555555556,
+   "collision_ci": [
+    0.09813408130013804,
+    3.0793839559667266
+   ],
+   "margin_violation": 1.6666666666666667,
+   "mv_ci": [
+    0.5683983686091316,
+    4.784905780179827
+   ],
+   "risk_violation": 18.21826280623608,
+   "audited": 2245,
+   "risk_mean": 0.05670645015667939,
+   "min_gap_median": 5.792593632118548,
+   "deadlock": 0.0,
+   "mean_speed": 23.28819105251018,
+   "delay_ratio": 1.388300739990942,
+   "t_clear": 13.310055865921843,
+   "max_decel": 3.5389916196305875,
+   "rms_jerk": 3.4936810896543182,
+   "learned_share": 0.0,
+   "miss": 0.0
+  },
+  {
+   "method": "End-to-end RL (PPO)",
+   "episodes": 180,
+   "collision": 1.6666666666666667,
+   "collision_ci": [
+    0.5683983686091316,
+    4.784905780179827
+   ],
+   "margin_violation": 5.555555555555555,
+   "mv_ci": [
+    3.045294395962398,
+    9.923261143153884
+   ],
+   "risk_violation": 18.24212271973466,
+   "audited": 2412,
+   "risk_mean": 0.05428662056813676,
+   "min_gap_median": 8.37448519680315,
+   "deadlock": 0.0,
+   "mean_speed": 21.75330205804406,
+   "delay_ratio": 1.4867962731107398,
+   "t_clear": 14.182768361581985,
+   "max_decel": 6.046912366659596,
+   "rms_jerk": 13.176570648053156,
+   "learned_share": 0.0,
+   "miss": 0.0
+  }
+ ],
+ "OOD": [
+  {
+   "method": "McQueenGuard",
+   "episodes": 120,
+   "collision": 2.5,
+   "collision_ci": [
+    0.853802009878548,
+    7.0931237404347565
+   ],
+   "margin_violation": 8.333333333333332,
+   "mv_ci": [
+    4.589315481673031,
+    14.662373772987763
+   ],
+   "risk_violation": 22.98780487804878,
+   "audited": 1640,
+   "risk_mean": 0.08185687144586397,
+   "min_gap_median": 3.7986128186843935,
+   "deadlock": 0.8333333333333334,
+   "mean_speed": 21.62943165714359,
+   "delay_ratio": 1.5800066389493126,
+   "t_clear": 14.762500000000077,
+   "max_decel": 5.174849528775555,
+   "rms_jerk": 7.143356807400848,
+   "learned_share": 56.02344258736705,
+   "miss": 39.15780334273931
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 120,
+   "collision": 5.0,
+   "collision_ci": [
+    2.3114049304474236,
+    10.480419464586234
+   ],
+   "margin_violation": 13.333333333333334,
+   "mv_ci": [
+    8.37653717755315,
+    20.56494936654835
+   ],
+   "risk_violation": 24.828446662507798,
+   "audited": 1603,
+   "risk_mean": 0.09147439023795542,
+   "min_gap_median": 3.7704876780024463,
+   "deadlock": 0.8333333333333334,
+   "mean_speed": 22.369422798667365,
+   "delay_ratio": 1.6285708007570592,
+   "t_clear": 14.593362831858482,
+   "max_decel": 5.148559525385186,
+   "rms_jerk": 6.918457894553994,
+   "learned_share": 0.0,
+   "miss": 90.02985074626865
+  },
+  {
+   "method": "McQueenGuard w/o admission (ablation)",
+   "episodes": 120,
+   "collision": 2.5,
+   "collision_ci": [
+    0.853802009878548,
+    7.0931237404347565
+   ],
+   "margin_violation": 3.3333333333333335,
+   "mv_ci": [
+    1.3037340166920577,
+    8.25815794852803
+   ],
+   "risk_violation": 10.83223249669749,
+   "audited": 2271,
+   "risk_mean": 0.023025354098200952,
+   "min_gap_median": 6.395631199211549,
+   "deadlock": 17.5,
+   "mean_speed": 18.042925834942178,
+   "delay_ratio": 1.7034597270861873,
+   "t_clear": 15.25625000000007,
+   "max_decel": 5.055524683902454,
+   "rms_jerk": 6.812462617260115,
+   "learned_share": 92.19335116545663,
+   "miss": 0.0
+  },
+  {
+   "method": "VerifAI runtime assurance",
+   "episodes": 120,
+   "collision": 3.3333333333333335,
+   "collision_ci": [
+    1.3037340166920577,
+    8.25815794852803
+   ],
+   "margin_violation": 6.666666666666667,
+   "mv_ci": [
+    3.416489747129058,
+    12.605267077718166
+   ],
+   "risk_violation": 13.23943661971831,
+   "audited": 2130,
+   "risk_mean": 0.05021605199998437,
+   "min_gap_median": 8.374008381783803,
+   "deadlock": 21.666666666666668,
+   "mean_speed": 22.006788906774833,
+   "delay_ratio": 1.5705256422016507,
+   "t_clear": 11.377777777777808,
+   "max_decel": 5.15760382258677,
+   "rms_jerk": 10.232766328075742,
+   "learned_share": 0.0,
+   "miss": 0.0
+  },
+  {
+   "method": "MPC (Zhang et al. 2022)",
+   "episodes": 120,
+   "collision": 8.333333333333332,
+   "collision_ci": [
+    4.589315481673031,
+    14.662373772987763
+   ],
+   "margin_violation": 15.833333333333332,
+   "mv_ci": [
+    10.376896007675636,
+    23.40948918114622
+   ],
+   "risk_violation": 24.771929824561404,
+   "audited": 1425,
+   "risk_mean": 0.09136767160494508,
+   "min_gap_median": 5.588829829373656,
+   "deadlock": 0.0,
+   "mean_speed": 27.001895560093732,
+   "delay_ratio": 1.3387108016429716,
+   "t_clear": 12.907272727272783,
+   "max_decel": 3.4302659140591114,
+   "rms_jerk": 3.0063420362557314,
+   "learned_share": 0.0,
+   "miss": 0.024945431867789213
+  },
+  {
+   "method": "Rule-based (IDM + AEB)",
+   "episodes": 120,
+   "collision": 5.833333333333333,
+   "collision_ci": [
+    2.854064663137293,
+    11.55272594680315
+   ],
+   "margin_violation": 10.0,
+   "mv_ci": [
+    5.8133016993107605,
+    16.668319985163606
+   ],
+   "risk_violation": 19.026217228464418,
+   "audited": 1335,
+   "risk_mean": 0.07118950663573212,
+   "min_gap_median": 6.1459413869059345,
+   "deadlock": 0.0,
+   "mean_speed": 27.524553659720763,
+   "delay_ratio": 1.369895089117105,
+   "t_clear": 12.09778761061951,
+   "max_decel": 3.7624224796570434,
+   "rms_jerk": 3.830560649318437,
+   "learned_share": 0.0,
+   "miss": 0.0
+  },
+  {
+   "method": "End-to-end RL (PPO)",
+   "episodes": 120,
+   "collision": 2.5,
+   "collision_ci": [
+    0.853802009878548,
+    7.0931237404347565
+   ],
+   "margin_violation": 10.833333333333334,
+   "mv_ci": [
+    6.44107989410726,
+    17.65550800527389
+   ],
+   "risk_violation": 20.094722598105548,
+   "audited": 1478,
+   "risk_mean": 0.0786317814868209,
+   "min_gap_median": 8.589187644552347,
+   "deadlock": 0.0,
+   "mean_speed": 24.333547332777837,
+   "delay_ratio": 1.4809643723487342,
+   "t_clear": 13.490170940170996,
+   "max_decel": 5.117141669196404,
+   "rms_jerk": 11.022764704515625,
+   "learned_share": 0.0,
+   "miss": 0.0
+  }
+ ],
+ "mcnemar_mv": {
+  "McQueenGuard (exact only)": [
+   3,
+   21,
+   0.0002771615982055664
+  ],
+  "McQueenGuard w/o admission (ablation)": [
+   7,
+   0,
+   0.015625
+  ],
+  "VerifAI runtime assurance": [
+   6,
+   5,
+   1.0
+  ],
+  "MPC (Zhang et al. 2022)": [
+   3,
+   19,
+   0.0008554458618164062
+  ],
+  "Rule-based (IDM + AEB)": [
+   4,
+   8,
+   0.3876953125
+  ],
+  "End-to-end RL (PPO)": [
+   5,
+   17,
+   0.01690053939819336
+  ]
+ },
+ "mcnemar_col": {
+  "McQueenGuard (exact only)": [
+   1,
+   4,
+   0.375
+  ],
+  "McQueenGuard w/o admission (ablation)": [
+   2,
+   2,
+   1.0
+  ],
+  "VerifAI runtime assurance": [
+   3,
+   5,
+   0.7265625
+  ],
+  "MPC (Zhang et al. 2022)": [
+   1,
+   9,
+   0.021484375
+  ],
+  "Rule-based (IDM + AEB)": [
+   1,
+   6,
+   0.125
+  ],
+  "End-to-end RL (PPO)": [
+   3,
+   6,
+   0.5078125
+  ]
+ }
+}

@@ -1,0 +1,1466 @@
+{
+ "eps": 0.018062826965811775,
+ "eps_u": 0.1014977837632498,
+ "delta_pair": 0.07496097019172898,
+ "n_rows": 25466,
+ "reconstruction": 1.0,
+ "episodes_per_method": 600,
+ "methods": [
+  "End-to-end RL (PPO)",
+  "Learned verifier only - Simplex shield",
+  "MPC (Zhang et al. 2022)",
+  "McQueenGuard",
+  "McQueenGuard (exact only)",
+  "McQueenGuard - Simplex shield",
+  "McQueenGuard - conformal margin",
+  "McQueenGuard - exact fallback",
+  "McQueenGuard - familiarity gate",
+  "McQueenGuard w/o admission (ablation)",
+  "McQueenGuard, zero-latency exact fallback",
+  "Rule-based (IDM + AEB)",
+  "VerifAI runtime assurance"
+ ],
+ "ablation": [
+  {
+   "method": "McQueenGuard",
+   "episodes": 600,
+   "collision": 1.0,
+   "collision_ci": [
+    0.45908595233918537,
+    2.164383513825451
+   ],
+   "margin_violation": 4.833333333333333,
+   "mv_ci": [
+    3.386067991337791,
+    6.855293319310565
+   ],
+   "n_col": 6,
+   "n_mv": 29,
+   "risk_violation": 14.418655572585942,
+   "audited": 9134,
+   "deadlock": 1.5,
+   "n_dead": 9,
+   "mean_speed": 19.43196438250331,
+   "delay_ratio": 1.6440850199915609,
+   "learned_share": 85.78274760383387,
+   "exact_share": 14.217252396166135,
+   "cons_share": 0.0,
+   "miss": 12.889945193381646,
+   "lat_mean_ep": 49.10272525079841,
+   "lat_mean": 49.1027252507984,
+   "lat_p50": 0.06513650009765115,
+   "lat_p95": 331.17958530025345,
+   "lat_p99": 794.1753978797715,
+   "lat_max": 2601.860147000025
+  },
+  {
+   "method": "McQueenGuard - conformal margin",
+   "episodes": 600,
+   "collision": 1.5,
+   "collision_ci": [
+    0.791115278835805,
+    2.8259922540006213
+   ],
+   "margin_violation": 5.166666666666667,
+   "mv_ci": [
+    3.6634513216604825,
+    7.240335366769067
+   ],
+   "n_col": 9,
+   "n_mv": 31,
+   "risk_violation": 21.392016376663253,
+   "audited": 8793,
+   "deadlock": 0.33333333333333337,
+   "n_dead": 2,
+   "mean_speed": 20.055701047177415,
+   "delay_ratio": 1.6164203800569565,
+   "learned_share": 85.77656096329177,
+   "exact_share": 14.223439036708221,
+   "cons_share": 0.0,
+   "miss": 12.885090773769969,
+   "lat_mean_ep": 48.259519623933066,
+   "lat_mean": 48.259519623933066,
+   "lat_p50": 0.042063000023517816,
+   "lat_p95": 323.6401560501463,
+   "lat_p99": 777.3617840905512,
+   "lat_max": 2601.7935439999746
+  },
+  {
+   "method": "McQueenGuard - familiarity gate",
+   "episodes": 600,
+   "collision": 1.0,
+   "collision_ci": [
+    0.45908595233918537,
+    2.164383513825451
+   ],
+   "margin_violation": 2.0,
+   "mv_ci": [
+    1.1477064060296744,
+    3.463039193478542
+   ],
+   "n_col": 6,
+   "n_mv": 12,
+   "risk_violation": 8.641377975614477,
+   "audited": 10334,
+   "deadlock": 8.5,
+   "n_dead": 51,
+   "mean_speed": 18.12255249287119,
+   "delay_ratio": 1.6821842988801083,
+   "learned_share": 95.61407636777759,
+   "exact_share": 4.385923632222421,
+   "cons_share": 0.0,
+   "miss": 4.014155427345199,
+   "lat_mean_ep": 15.717690492305083,
+   "lat_mean": 15.717690492305083,
+   "lat_p50": 0.03796999999394757,
+   "lat_p95": 0.20936759997311968,
+   "lat_p99": 481.98498740015566,
+   "lat_max": 2601.8242759998884
+  },
+  {
+   "method": "McQueenGuard - exact fallback",
+   "episodes": 600,
+   "collision": 0.33333333333333337,
+   "collision_ci": [
+    0.091457753841235,
+    1.2071609567610158
+   ],
+   "margin_violation": 1.0,
+   "mv_ci": [
+    0.45908595233918537,
+    2.164383513825451
+   ],
+   "n_col": 2,
+   "n_mv": 6,
+   "risk_violation": 2.486776663772006,
+   "audited": 12667,
+   "deadlock": 24.666666666666668,
+   "n_dead": 148,
+   "mean_speed": 15.647194223498488,
+   "delay_ratio": 1.671008832694729,
+   "learned_share": 53.4139694354496,
+   "exact_share": 0.0,
+   "cons_share": 46.5860305645504,
+   "miss": 0.0,
+   "lat_mean_ep": 0.05215810474843882,
+   "lat_mean": 0.05215810474843882,
+   "lat_p50": 0.037052999914521934,
+   "lat_p95": 0.1365761999977621,
+   "lat_p99": 0.19581799984507597,
+   "lat_max": 8.20682100038539
+  },
+  {
+   "method": "McQueenGuard w/o admission (ablation)",
+   "episodes": 600,
+   "collision": 0.8333333333333334,
+   "collision_ci": [
+    0.35645513465728096,
+    1.9358016426167592
+   ],
+   "margin_violation": 1.5,
+   "mv_ci": [
+    0.791115278835805,
+    2.8259922540006213
+   ],
+   "n_col": 5,
+   "n_mv": 9,
+   "risk_violation": 14.292873609301394,
+   "audited": 9977,
+   "deadlock": 6.666666666666667,
+   "n_dead": 40,
+   "mean_speed": 18.928609599324954,
+   "delay_ratio": 1.6312983689886593,
+   "learned_share": 91.65060626226136,
+   "exact_share": 8.349393737738637,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.06825292634995432,
+   "lat_mean": 0.06825292634995432,
+   "lat_p50": 0.036309000051915064,
+   "lat_p95": 0.13521259988920065,
+   "lat_p99": 0.20124059998124721,
+   "lat_max": 12.289870999893537
+  },
+  {
+   "method": "McQueenGuard - Simplex shield",
+   "episodes": 600,
+   "collision": 7.000000000000001,
+   "collision_ci": [
+    5.220162201861752,
+    9.32696406436436
+   ],
+   "margin_violation": 14.833333333333334,
+   "mv_ci": [
+    12.213275125695008,
+    17.900847518389142
+   ],
+   "n_col": 42,
+   "n_mv": 89,
+   "risk_violation": 14.209450249886416,
+   "audited": 8804,
+   "deadlock": 1.0,
+   "n_dead": 6,
+   "mean_speed": 20.751281870997367,
+   "delay_ratio": 1.6016720446086776,
+   "learned_share": 85.93890149316731,
+   "exact_share": 14.06109850683269,
+   "cons_share": 0.0,
+   "miss": 12.715665066216431,
+   "lat_mean_ep": 47.36630232017435,
+   "lat_mean": 47.36630232017435,
+   "lat_p50": 0.04155300001684736,
+   "lat_p95": 320.999896350213,
+   "lat_p99": 759.9845565804162,
+   "lat_max": 2601.813805999882
+  },
+  {
+   "method": "Learned verifier only - Simplex shield",
+   "episodes": 600,
+   "collision": 0.8333333333333334,
+   "collision_ci": [
+    0.35645513465728096,
+    1.9358016426167592
+   ],
+   "margin_violation": 2.666666666666667,
+   "mv_ci": [
+    1.6479666253101217,
+    4.287629729760481
+   ],
+   "n_col": 5,
+   "n_mv": 16,
+   "risk_violation": 14.31578947368421,
+   "audited": 9975,
+   "deadlock": 6.666666666666667,
+   "n_dead": 40,
+   "mean_speed": 18.934061157792737,
+   "delay_ratio": 1.628178923925973,
+   "learned_share": 91.62387842954203,
+   "exact_share": 8.376121570457963,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.050116590547008386,
+   "lat_mean": 0.050116590547008386,
+   "lat_p50": 0.03615249994481928,
+   "lat_p95": 0.12427550001348209,
+   "lat_p99": 0.18720534997100907,
+   "lat_max": 9.142252999936318
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 600,
+   "collision": 2.0,
+   "collision_ci": [
+    1.1477064060296744,
+    3.463039193478542
+   ],
+   "margin_violation": 9.333333333333334,
+   "mv_ci": [
+    7.257411793779555,
+    11.926692116914909
+   ],
+   "n_col": 12,
+   "n_mv": 56,
+   "risk_violation": 24.014458375691856,
+   "audited": 8853,
+   "deadlock": 2.166666666666667,
+   "n_dead": 13,
+   "mean_speed": 20.35018747575503,
+   "delay_ratio": 1.6515234559159169,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 92.6925968965753,
+   "lat_mean_ep": 334.1849069150001,
+   "lat_mean": 334.18490691500006,
+   "lat_p50": 230.94929800026875,
+   "lat_p95": 911.5260949993171,
+   "lat_p99": 1524.6573049998915,
+   "lat_max": 2601.674866999929
+  },
+  {
+   "method": "McQueenGuard, zero-latency exact fallback",
+   "episodes": 600,
+   "collision": 1.0,
+   "collision_ci": [
+    0.45908595233918537,
+    2.164383513825451
+   ],
+   "margin_violation": 1.6666666666666667,
+   "mv_ci": [
+    0.9077631854320565,
+    3.0405570362949668
+   ],
+   "n_col": 6,
+   "n_mv": 10,
+   "risk_violation": 9.138028169014085,
+   "audited": 8875,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 20.32543376779185,
+   "delay_ratio": 1.583129581586548,
+   "learned_share": 66.52192706696007,
+   "exact_share": 33.478072933039925,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.07133633417150276,
+   "lat_mean": 0.07133633417150276,
+   "lat_p50": 0.049651000153971836,
+   "lat_p95": 0.16249080008492456,
+   "lat_p99": 0.2124658097045536,
+   "lat_max": 8.196269000109169
+  }
+ ],
+ "ablation_id": [
+  {
+   "method": "McQueenGuard",
+   "episodes": 360,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    1.0558440816003447
+   ],
+   "margin_violation": 1.1111111111111112,
+   "mv_ci": [
+    0.43290733267216713,
+    2.8216957693370586
+   ],
+   "n_col": 0,
+   "n_mv": 4,
+   "risk_violation": 9.508771929824562,
+   "audited": 5700,
+   "deadlock": 1.9444444444444444,
+   "n_dead": 7,
+   "mean_speed": 18.62994853265912,
+   "delay_ratio": 1.6440436554674902,
+   "learned_share": 95.47932914624887,
+   "exact_share": 4.520670853751121,
+   "cons_share": 0.0,
+   "miss": 4.273931948374629,
+   "lat_mean_ep": 17.597716474634485
+  },
+  {
+   "method": "McQueenGuard - conformal margin",
+   "episodes": 360,
+   "collision": 0.5555555555555556,
+   "collision_ci": [
+    0.1524826236302344,
+    2.002740968174551
+   ],
+   "margin_violation": 2.7777777777777777,
+   "mv_ci": [
+    1.5156818051565717,
+    5.037059827465976
+   ],
+   "n_col": 2,
+   "n_mv": 10,
+   "risk_violation": 19.636032757051865,
+   "audited": 5495,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 19.05695109931276,
+   "delay_ratio": 1.6488349723856315,
+   "learned_share": 95.42805519635803,
+   "exact_share": 4.571944803641967,
+   "cons_share": 0.0,
+   "miss": 4.290294581333145,
+   "lat_mean_ep": 16.970854131807084
+  },
+  {
+   "method": "McQueenGuard - familiarity gate",
+   "episodes": 360,
+   "collision": 0.2777777777777778,
+   "collision_ci": [
+    0.04905017720812478,
+    1.5564836594944405
+   ],
+   "margin_violation": 0.5555555555555556,
+   "mv_ci": [
+    0.1524826236302344,
+    2.002740968174551
+   ],
+   "n_col": 1,
+   "n_mv": 2,
+   "risk_violation": 8.921015514809591,
+   "audited": 5672,
+   "deadlock": 1.3888888888888888,
+   "n_dead": 5,
+   "mean_speed": 18.793901614199555,
+   "delay_ratio": 1.6264844961588265,
+   "learned_share": 96.21411685241472,
+   "exact_share": 3.785883147585275,
+   "cons_share": 0.0,
+   "miss": 3.542722053360351,
+   "lat_mean_ep": 13.601534257799493
+  },
+  {
+   "method": "McQueenGuard - exact fallback",
+   "episodes": 360,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    1.0558440816003447
+   ],
+   "margin_violation": 0.0,
+   "mv_ci": [
+    0.0,
+    1.0558440816003447
+   ],
+   "n_col": 0,
+   "n_mv": 0,
+   "risk_violation": 3.988259668508287,
+   "audited": 5792,
+   "deadlock": 1.6666666666666667,
+   "n_dead": 6,
+   "mean_speed": 18.701784986467842,
+   "delay_ratio": 1.632144712883747,
+   "learned_share": 90.57530508603047,
+   "exact_share": 0.0,
+   "cons_share": 9.42469491396953,
+   "miss": 0.0,
+   "lat_mean_ep": 0.053566928295269454
+  },
+  {
+   "method": "McQueenGuard w/o admission (ablation)",
+   "episodes": 360,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    1.0558440816003447
+   ],
+   "margin_violation": 0.2777777777777778,
+   "mv_ci": [
+    0.04905017720812478,
+    1.5564836594944405
+   ],
+   "n_col": 0,
+   "n_mv": 1,
+   "risk_violation": 17.540953432725935,
+   "audited": 5433,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 19.429533449112746,
+   "delay_ratio": 1.6129321707064401,
+   "learned_share": 90.90522469166916,
+   "exact_share": 9.09477530833084,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.07882092021940941
+  },
+  {
+   "method": "McQueenGuard - Simplex shield",
+   "episodes": 360,
+   "collision": 1.3888888888888888,
+   "collision_ci": [
+    0.5946618004726728,
+    3.209631056638774
+   ],
+   "margin_violation": 5.277777777777778,
+   "mv_ci": [
+    3.4044735609293726,
+    8.095475867613159
+   ],
+   "n_col": 5,
+   "n_mv": 19,
+   "risk_violation": 9.302739238705087,
+   "audited": 5622,
+   "deadlock": 1.1111111111111112,
+   "n_dead": 4,
+   "mean_speed": 18.91052126513832,
+   "delay_ratio": 1.6614372981208907,
+   "learned_share": 95.45454545454545,
+   "exact_share": 4.545454545454546,
+   "cons_share": 0.0,
+   "miss": 4.2655747900901835,
+   "lat_mean_ep": 17.030763433708906
+  },
+  {
+   "method": "Learned verifier only - Simplex shield",
+   "episodes": 360,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    1.0558440816003447
+   ],
+   "margin_violation": 1.3888888888888888,
+   "mv_ci": [
+    0.5946618004726728,
+    3.209631056638774
+   ],
+   "n_col": 0,
+   "n_mv": 5,
+   "risk_violation": 17.54418262150221,
+   "audited": 5432,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 19.432651921662874,
+   "delay_ratio": 1.6088607898640723,
+   "learned_share": 90.88403011877382,
+   "exact_share": 9.115969881226174,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.05190767965705261
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 360,
+   "collision": 0.2777777777777778,
+   "collision_ci": [
+    0.04905017720812478,
+    1.5564836594944405
+   ],
+   "margin_violation": 6.944444444444445,
+   "mv_ci": [
+    4.7476807006433255,
+    10.050407258512529
+   ],
+   "n_col": 1,
+   "n_mv": 25,
+   "risk_violation": 24.16576964477933,
+   "audited": 5574,
+   "deadlock": 3.0555555555555554,
+   "n_dead": 11,
+   "mean_speed": 19.31397416811865,
+   "delay_ratio": 1.6705404999454057,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 94.00327574364664,
+   "lat_mean_ep": 323.6723042530305
+  },
+  {
+   "method": "McQueenGuard, zero-latency exact fallback",
+   "episodes": 360,
+   "collision": 0.0,
+   "collision_ci": [
+    0.0,
+    1.0558440816003447
+   ],
+   "margin_violation": 0.0,
+   "mv_ci": [
+    0.0,
+    1.0558440816003447
+   ],
+   "n_col": 0,
+   "n_mv": 0,
+   "risk_violation": 7.412738395106153,
+   "audited": 5558,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 19.350496627817737,
+   "delay_ratio": 1.5913747777749965,
+   "learned_share": 88.04955407612108,
+   "exact_share": 11.95044592387891,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.05946640414119549
+  }
+ ],
+ "ablation_ood": [
+  {
+   "method": "McQueenGuard",
+   "episodes": 240,
+   "collision": 2.5,
+   "collision_ci": [
+    1.1506807509485621,
+    5.34599578004533
+   ],
+   "margin_violation": 10.416666666666668,
+   "mv_ci": [
+    7.1556517549886784,
+    14.924912020839564
+   ],
+   "n_col": 6,
+   "n_mv": 25,
+   "risk_violation": 22.568433313919627,
+   "audited": 3434,
+   "deadlock": 0.8333333333333334,
+   "n_dead": 2,
+   "mean_speed": 20.634988157269596,
+   "delay_ratio": 1.6493314675976762,
+   "learned_share": 56.270349753177186,
+   "exact_share": 43.729650246822814,
+   "cons_share": 0.0,
+   "miss": 39.113538493855685,
+   "lat_mean_ep": 144.99098744129083
+  },
+  {
+   "method": "McQueenGuard - conformal margin",
+   "episodes": 240,
+   "collision": 2.9166666666666665,
+   "collision_ci": [
+    1.4198549663490416,
+    5.897026156478235
+   ],
+   "margin_violation": 8.75,
+   "mv_ci": [
+    5.794139771629913,
+    13.005605636864779
+   ],
+   "n_col": 7,
+   "n_mv": 21,
+   "risk_violation": 24.31776834445118,
+   "audited": 3298,
+   "deadlock": 0.8333333333333334,
+   "n_dead": 2,
+   "mean_speed": 21.553825968974397,
+   "delay_ratio": 1.571794498593999,
+   "learned_share": 56.777901963915056,
+   "exact_share": 43.222098036084944,
+   "cons_share": 0.0,
+   "miss": 38.70881898983448,
+   "lat_mean_ep": 142.2687288967516
+  },
+  {
+   "method": "McQueenGuard - familiarity gate",
+   "episodes": 240,
+   "collision": 2.083333333333333,
+   "collision_ci": [
+    0.8930664388657018,
+    4.783405500294801
+   ],
+   "margin_violation": 4.166666666666666,
+   "mv_ci": [
+    2.278717572225677,
+    7.49877732610176
+   ],
+   "n_col": 5,
+   "n_mv": 10,
+   "risk_violation": 8.301158301158301,
+   "audited": 4662,
+   "deadlock": 19.166666666666668,
+   "n_dead": 46,
+   "mean_speed": 17.115528810878644,
+   "delay_ratio": 1.750639553650438,
+   "learned_share": 94.85849156903187,
+   "exact_share": 5.141508430968126,
+   "cons_share": 0.0,
+   "miss": 4.607795190201791,
+   "lat_mean_ep": 18.382403163368068
+  },
+  {
+   "method": "McQueenGuard - exact fallback",
+   "episodes": 240,
+   "collision": 0.8333333333333334,
+   "collision_ci": [
+    0.2288235363161974,
+    2.9870346273441455
+   ],
+   "margin_violation": 2.5,
+   "mv_ci": [
+    1.1506807509485621,
+    5.34599578004533
+   ],
+   "n_col": 2,
+   "n_mv": 6,
+   "risk_violation": 1.221818181818182,
+   "audited": 6875,
+   "deadlock": 59.166666666666664,
+   "n_dead": 142,
+   "mean_speed": 11.065308079044456,
+   "delay_ratio": 1.7087810051309296,
+   "learned_share": 18.6593509421122,
+   "exact_share": 0.0,
+   "cons_share": 81.3406490578878,
+   "miss": 0.0,
+   "lat_mean_ep": 0.05084052226553462
+  },
+  {
+   "method": "McQueenGuard w/o admission (ablation)",
+   "episodes": 240,
+   "collision": 2.083333333333333,
+   "collision_ci": [
+    0.8930664388657018,
+    4.783405500294801
+   ],
+   "margin_violation": 3.3333333333333335,
+   "mv_ci": [
+    1.6985260309156955,
+    6.43855968374497
+   ],
+   "n_col": 5,
+   "n_mv": 8,
+   "risk_violation": 10.409330985915492,
+   "audited": 4544,
+   "deadlock": 16.666666666666664,
+   "n_dead": 40,
+   "mean_speed": 18.17722382464326,
+   "delay_ratio": 1.7069837981600051,
+   "learned_share": 92.55677683734824,
+   "exact_share": 7.443223162651756,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.055405271591613084
+  },
+  {
+   "method": "McQueenGuard - Simplex shield",
+   "episodes": 240,
+   "collision": 15.416666666666668,
+   "collision_ci": [
+    11.39635895515078,
+    20.526659922678107
+   ],
+   "margin_violation": 29.166666666666668,
+   "mv_ci": [
+    23.780336603417556,
+    35.20943380491309
+   ],
+   "n_col": 37,
+   "n_mv": 70,
+   "risk_violation": 22.878692646134507,
+   "audited": 3182,
+   "deadlock": 0.8333333333333334,
+   "n_dead": 2,
+   "mean_speed": 23.512422779785936,
+   "delay_ratio": 1.5460345336260597,
+   "learned_share": 55.220301171221415,
+   "exact_share": 44.779698828778585,
+   "cons_share": 0.0,
+   "miss": 39.99442275515895,
+   "lat_mean_ep": 145.2961217193039
+  },
+  {
+   "method": "Learned verifier only - Simplex shield",
+   "episodes": 240,
+   "collision": 2.083333333333333,
+   "collision_ci": [
+    0.8930664388657018,
+    4.783405500294801
+   ],
+   "margin_violation": 4.583333333333333,
+   "mv_ci": [
+    2.5782215329808382,
+    8.019477957179987
+   ],
+   "n_col": 5,
+   "n_mv": 11,
+   "risk_violation": 10.455646048866388,
+   "audited": 4543,
+   "deadlock": 16.666666666666664,
+   "n_dead": 40,
+   "mean_speed": 18.18617501198753,
+   "delay_ratio": 1.7056317587464318,
+   "learned_share": 92.52356141291855,
+   "exact_share": 7.47643858708145,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.04793855976615199
+  },
+  {
+   "method": "McQueenGuard (exact only)",
+   "episodes": 240,
+   "collision": 4.583333333333333,
+   "collision_ci": [
+    2.5782215329808382,
+    8.019477957179987
+   ],
+   "margin_violation": 12.916666666666668,
+   "mv_ci": [
+    9.250908676247239,
+    17.750882650581328
+   ],
+   "n_col": 11,
+   "n_mv": 31,
+   "risk_violation": 23.75724306190912,
+   "audited": 3279,
+   "deadlock": 0.8333333333333334,
+   "n_dead": 2,
+   "mean_speed": 21.904507437209592,
+   "delay_ratio": 1.6297613809400489,
+   "learned_share": 0.0,
+   "exact_share": 100.0,
+   "cons_share": 0.0,
+   "miss": 90.2913561126706,
+   "lat_mean_ep": 353.44461367940806
+  },
+  {
+   "method": "McQueenGuard, zero-latency exact fallback",
+   "episodes": 240,
+   "collision": 2.5,
+   "collision_ci": [
+    1.1506807509485621,
+    5.34599578004533
+   ],
+   "margin_violation": 4.166666666666666,
+   "mv_ci": [
+    2.278717572225677,
+    7.49877732610176
+   ],
+   "n_col": 6,
+   "n_mv": 10,
+   "risk_violation": 12.028941814892976,
+   "audited": 3317,
+   "deadlock": 0.0,
+   "n_dead": 0,
+   "mean_speed": 21.787839477753018,
+   "delay_ratio": 1.55534835896044,
+   "learned_share": 30.54010077682133,
+   "exact_share": 69.45989922317867,
+   "cons_share": 0.0,
+   "miss": 0.0,
+   "lat_mean_ep": 0.09117603876341461
+  }
+ ],
+ "ablation_mcnemar_mv": {
+  "McQueenGuard - conformal margin": [
+   20,
+   22,
+   0.8776143287523154
+  ],
+  "McQueenGuard - familiarity gate": [
+   21,
+   4,
+   0.0009105205535888672
+  ],
+  "McQueenGuard - exact fallback": [
+   23,
+   0,
+   2.384185791015625e-07
+  ],
+  "McQueenGuard w/o admission (ablation)": [
+   21,
+   1,
+   1.0967254638671875e-05
+  ],
+  "McQueenGuard - Simplex shield": [
+   10,
+   70,
+   3.161290522649495e-12
+  ],
+  "Learned verifier only - Simplex shield": [
+   21,
+   8,
+   0.0241195447742939
+  ],
+  "McQueenGuard (exact only)": [
+   14,
+   41,
+   0.00035528111863147854
+  ],
+  "McQueenGuard, zero-latency exact fallback": [
+   19,
+   0,
+   3.814697265625e-06
+  ]
+ },
+ "ablation_mcnemar_col": {
+  "McQueenGuard - conformal margin": [
+   3,
+   6,
+   0.5078125
+  ],
+  "McQueenGuard - familiarity gate": [
+   3,
+   3,
+   1.0
+  ],
+  "McQueenGuard - exact fallback": [
+   4,
+   0,
+   0.125
+  ],
+  "McQueenGuard w/o admission (ablation)": [
+   3,
+   2,
+   1.0
+  ],
+  "McQueenGuard - Simplex shield": [
+   2,
+   38,
+   1.4933903003111482e-09
+  ],
+  "Learned verifier only - Simplex shield": [
+   3,
+   2,
+   1.0
+  ],
+  "McQueenGuard (exact only)": [
+   2,
+   8,
+   0.109375
+  ],
+  "McQueenGuard, zero-latency exact fallback": [
+   2,
+   2,
+   1.0
+  ]
+ },
+ "policies": {
+  "all": {
+   "learned": {
+    "n": 25466,
+    "admitted": 25466,
+    "admission": 100.0,
+    "false_adm": 1790,
+    "false_adm_per_dec": 7.028979816225555,
+    "false_adm_per_adm": 7.028979816225555,
+    "fa_ci": [
+     6.721442473361329,
+     7.349479742346523
+    ],
+    "agree_adm": 65.35380507343125
+   },
+   "eps": {
+    "n": 25466,
+    "admitted": 23541,
+    "admission": 92.44090159428258,
+    "false_adm": 532,
+    "false_adm_per_dec": 2.0890599230346343,
+    "false_adm_per_adm": 2.2598870056497176,
+    "fa_ci": [
+     1.9204934294605076,
+     2.272079169813137
+    ],
+    "agree_adm": 58.67210398878552
+   },
+   "gate": {
+    "n": 25466,
+    "admitted": 22194,
+    "admission": 87.15149611246368,
+    "false_adm": 770,
+    "false_adm_per_dec": 3.023639362286971,
+    "false_adm_per_adm": 3.4694061458051726,
+    "fa_ci": [
+     2.8203046695492375,
+     3.241144884184932
+    ],
+    "agree_adm": 67.48220239704425
+   },
+   "full": {
+    "n": 25466,
+    "admitted": 21881,
+    "admission": 85.92240634571586,
+    "false_adm": 431,
+    "false_adm_per_dec": 1.6924526820073824,
+    "false_adm_per_adm": 1.9697454412503999,
+    "fa_ci": [
+     1.5411570079063373,
+     1.8583207493483447
+    ],
+    "agree_adm": 60.31717014761665
+   }
+  },
+  "ID": {
+   "learned": {
+    "n": 19201,
+    "admitted": 19201,
+    "admission": 100.0,
+    "false_adm": 1029,
+    "false_adm_per_dec": 5.3590958804228945,
+    "false_adm_per_adm": 5.3590958804228945,
+    "fa_ci": [
+     5.049380967636596,
+     5.686670091487995
+    ],
+    "agree_adm": 67.52252486849643
+   },
+   "eps": {
+    "n": 19201,
+    "admitted": 18423,
+    "admission": 95.94812770168221,
+    "false_adm": 391,
+    "false_adm_per_dec": 2.036352273319098,
+    "false_adm_per_adm": 2.1223470661672907,
+    "fa_ci": [
+     1.8459558016911106,
+     2.2459373592501395
+    ],
+    "agree_adm": 59.740541714161644
+   },
+   "gate": {
+    "n": 19201,
+    "admitted": 18607,
+    "admission": 96.9064111244206,
+    "false_adm": 680,
+    "false_adm_per_dec": 3.5414822144679965,
+    "false_adm_per_adm": 3.6545386144999195,
+    "fa_ci": [
+     3.2892055220184964,
+     3.812345370231509
+    ],
+    "agree_adm": 67.3724942226044
+   },
+   "full": {
+    "n": 19201,
+    "admitted": 18326,
+    "admission": 95.4429456799125,
+    "false_adm": 383,
+    "false_adm_per_dec": 1.994687776678298,
+    "false_adm_per_adm": 2.0899268798428463,
+    "fa_ci": [
+     1.8063090038454546,
+     2.2022718323536843
+    ],
+    "agree_adm": 59.74571646840555
+   }
+  },
+  "OOD": {
+   "learned": {
+    "n": 6265,
+    "admitted": 6265,
+    "admission": 100.0,
+    "false_adm": 761,
+    "false_adm_per_dec": 12.146847565841979,
+    "false_adm_per_adm": 12.146847565841979,
+    "fa_ci": [
+     11.361038773772043,
+     12.979049832071818
+    ],
+    "agree_adm": 58.70710295291301
+   },
+   "eps": {
+    "n": 6265,
+    "admitted": 5118,
+    "admission": 81.69193934557063,
+    "false_adm": 141,
+    "false_adm_per_dec": 2.2505985634477255,
+    "false_adm_per_adm": 2.7549824150058617,
+    "fa_ci": [
+     1.9115245793237288,
+     2.648195034583887
+    ],
+    "agree_adm": 54.82610394685424
+   },
+   "gate": {
+    "n": 6265,
+    "admitted": 3587,
+    "admission": 57.25458898643256,
+    "false_adm": 90,
+    "false_adm_per_dec": 1.4365522745411015,
+    "false_adm_per_adm": 2.509060496236409,
+    "fa_ci": [
+     1.1702478882386347,
+     1.762376856977451
+    ],
+    "agree_adm": 68.05129634792306
+   },
+   "full": {
+    "n": 6265,
+    "admitted": 3555,
+    "admission": 56.7438148443735,
+    "false_adm": 48,
+    "false_adm_per_dec": 0.7661612130885874,
+    "false_adm_per_adm": 1.350210970464135,
+    "fa_ci": [
+     0.57838355745631,
+     1.014280707660869
+    ],
+    "agree_adm": 63.26300984528832
+   }
+  },
+  "risky": {
+   "learned": {
+    "n": 10155,
+    "admitted": 10155,
+    "admission": 100.0,
+    "false_adm": 1790,
+    "false_adm_per_dec": 17.626784835056622,
+    "false_adm_per_adm": 17.626784835056622,
+    "fa_ci": [
+     16.89793372446884,
+     18.38012002528152
+    ],
+    "agree_adm": 69.21713441654357
+   },
+   "eps": {
+    "n": 10155,
+    "admitted": 8459,
+    "admission": 83.2988675529296,
+    "false_adm": 532,
+    "false_adm_per_dec": 5.238798621368784,
+    "false_adm_per_adm": 6.2891594751152615,
+    "fa_ci": [
+     4.822118240311181,
+     5.689332199077499
+    ],
+    "agree_adm": 56.720652559404186
+   },
+   "gate": {
+    "n": 10155,
+    "admitted": 8125,
+    "admission": 80.00984736582964,
+    "false_adm": 770,
+    "false_adm_per_dec": 7.58247168882324,
+    "false_adm_per_adm": 9.476923076923077,
+    "fa_ci": [
+     7.0834882351671276,
+     8.113535803479168
+    ],
+    "agree_adm": 70.74461538461539
+   },
+   "full": {
+    "n": 10155,
+    "admitted": 7826,
+    "admission": 77.0654849827671,
+    "false_adm": 431,
+    "false_adm_per_dec": 4.244214672575086,
+    "false_adm_per_adm": 5.507283414260159,
+    "fa_ci": [
+     3.8691094606670884,
+     4.653925291641679
+    ],
+    "agree_adm": 57.538972655251726
+   }
+  },
+  "risky_OOD": {
+   "learned": {
+    "n": 2741,
+    "admitted": 2741,
+    "admission": 100.0,
+    "false_adm": 761,
+    "false_adm_per_dec": 27.763589930682233,
+    "false_adm_per_adm": 27.763589930682233,
+    "fa_ci": [
+     26.119042374961253,
+     29.470380344367975
+    ],
+    "agree_adm": 66.2531922655965
+   },
+   "eps": {
+    "n": 2741,
+    "admitted": 1804,
+    "admission": 65.81539584093396,
+    "false_adm": 141,
+    "false_adm_per_dec": 5.14410798978475,
+    "false_adm_per_adm": 7.815964523281597,
+    "fa_ci": [
+     4.378116641922583,
+     6.035657325944999
+    ],
+    "agree_adm": 59.47893569844789
+   },
+   "gate": {
+    "n": 2741,
+    "admitted": 1247,
+    "admission": 45.49434512951478,
+    "false_adm": 90,
+    "false_adm_per_dec": 3.2834731849689893,
+    "false_adm_per_adm": 7.217321571772254,
+    "fa_ci": [
+     2.6789822498214373,
+     4.018730288490428
+    ],
+    "agree_adm": 74.09783480352847
+   },
+   "full": {
+    "n": 2741,
+    "admitted": 1219,
+    "admission": 44.472820138635534,
+    "false_adm": 48,
+    "false_adm_per_dec": 1.7511856986501277,
+    "false_adm_per_adm": 3.937653814602133,
+    "fa_ci": [
+     1.323376258244621,
+     2.3140503969037125
+    ],
+    "agree_adm": 65.21739130434783
+   }
+  }
+ },
+ "theorem1": {
+  "same_set_m_pos": {
+   "n": 0,
+   "agree": NaN,
+   "bound_holds": NaN,
+   "agree_given_bound": NaN,
+   "n_bound": 0,
+   "regret_mean": 0.0,
+   "unsafe": 0
+  },
+  "same_set_m_nonpos": {
+   "n": 18174,
+   "agree": 71.26114229118521,
+   "bound_holds": 93.38615604710026,
+   "agree_given_bound": 73.40914447325005,
+   "n_bound": 16972,
+   "regret_mean": 0.008824830695720312,
+   "unsafe": 0
+  },
+  "different_set": {
+   "n": 3675,
+   "agree": 5.850340136054422,
+   "bound_holds": 96.27210884353742,
+   "agree_given_bound": 5.737704918032787,
+   "n_bound": 3538,
+   "regret_mean": 0.02654493252696966,
+   "unsafe": 431
+  },
+  "finite_T": 21599,
+  "pair_pos": {
+   "n": 3,
+   "agree": 66.66666666666666,
+   "regret_mean": 0.2576462431572637
+  },
+  "pair_nonpos": {
+   "n": 18171,
+   "agree": 71.26190083099443,
+   "regret_mean": 0.00877718201466678
+  },
+  "oracle_pos": {
+   "n": 690,
+   "agree": 100.0
+  },
+  "oracle_nonpos": {
+   "n": 17484,
+   "agree": 70.12697323266987
+  },
+  "T_median": 0.006821687652502573,
+  "T_p90": 0.03000379231356529,
+  "single_admissible": 32,
+  "single_admissible_agree": 100.0
+ },
+ "admitted_total": 21881,
+ "admitted_agree": 60.31717014761665,
+ "admitted_unsafe": 431,
+ "disagree_conservative": 6005,
+ "disagree_total": 8683,
+ "disagree_safe": 8325,
+ "disagree_regret_median": 0.007047076553890308,
+ "per_category": [
+  {
+   "category": "Clear (10-30)",
+   "ood": false,
+   "n": 3936,
+   "n_risky": 1231,
+   "admission": 97.53556910569105,
+   "fallback": 2.464430894308947,
+   "familiar": 98.55182926829268,
+   "cov_all": 96.11280487804879,
+   "cov_risky": 87.5710804224208,
+   "cov_adm": 96.32716853347226,
+   "cov_unfam": 82.45614035087719,
+   "fa_dec": 1.9563008130081299,
+   "fa_adm": 2.005730659025788,
+   "n_fa": 77,
+   "fa_dec_nogate": 2.083333333333333,
+   "fa_dec_noeps": 2.972560975609756,
+   "fa_dec_learned": 4.090447154471544,
+   "ep_fallback": 2.44928878040569,
+   "ep_collision": 0.0,
+   "ep_mv": 0.0,
+   "ep_dead": 1.6666666666666667,
+   "episodes": 60
+  },
+  {
+   "category": "Clear (35-50)",
+   "ood": false,
+   "n": 2465,
+   "n_risky": 1090,
+   "admission": 95.131845841785,
+   "fallback": 4.868154158215006,
+   "familiar": 97.76876267748479,
+   "cov_all": 95.05070993914806,
+   "cov_risky": 88.80733944954129,
+   "cov_adm": 95.22388059701493,
+   "cov_unfam": 94.54545454545455,
+   "fa_dec": 1.866125760649087,
+   "fa_adm": 1.9616204690831558,
+   "n_fa": 46,
+   "fa_dec_nogate": 1.947261663286004,
+   "fa_dec_noeps": 3.610547667342799,
+   "fa_dec_learned": 5.88235294117647,
+   "ep_fallback": 4.924191600697705,
+   "ep_collision": 0.0,
+   "ep_mv": 3.3333333333333335,
+   "ep_dead": 5.0,
+   "episodes": 60
+  },
+  {
+   "category": "Fog (10-30)",
+   "ood": false,
+   "n": 4281,
+   "n_risky": 1425,
+   "admission": 97.08012146694698,
+   "fallback": 2.919878533053023,
+   "familiar": 99.90656388694231,
+   "cov_all": 96.89324924083158,
+   "cov_risky": 90.66666666666666,
+   "cov_adm": 97.04042348411934,
+   "cov_unfam": 100.0,
+   "fa_dec": 1.4949778089231487,
+   "fa_adm": 1.539942252165544,
+   "n_fa": 64,
+   "fa_dec_nogate": 1.4949778089231487,
+   "fa_dec_noeps": 2.662929222144359,
+   "fa_dec_learned": 3.3169820135482366,
+   "ep_fallback": 2.922707186603613,
+   "ep_collision": 0.0,
+   "ep_mv": 0.0,
+   "ep_dead": 0.0,
+   "episodes": 60
+  },
+  {
+   "category": "Fog (35-50)",
+   "ood": false,
+   "n": 2350,
+   "n_risky": 946,
+   "admission": 92.46808510638299,
+   "fallback": 7.531914893617014,
+   "familiar": 98.29787234042553,
+   "cov_all": 96.25531914893617,
+   "cov_risky": 90.69767441860465,
+   "cov_adm": 97.00874367234238,
+   "cov_unfam": 100.0,
+   "fa_dec": 1.7872340425531916,
+   "fa_adm": 1.932811780947998,
+   "n_fa": 42,
+   "fa_dec_nogate": 1.7872340425531916,
+   "fa_dec_noeps": 3.3191489361702122,
+   "fa_dec_learned": 7.1489361702127665,
+   "ep_fallback": 7.4834716556477705,
+   "ep_collision": 0.0,
+   "ep_mv": 1.6666666666666667,
+   "ep_dead": 5.0,
+   "episodes": 60
+  },
+  {
+   "category": "Rain (10-30)",
+   "ood": false,
+   "n": 4017,
+   "n_risky": 1669,
+   "admission": 96.44012944983818,
+   "fallback": 3.5598705501618184,
+   "familiar": 100.0,
+   "cov_all": 94.49838187702265,
+   "cov_risky": 86.75853804673457,
+   "cov_adm": 94.60505937016003,
+   "cov_unfam": NaN,
+   "fa_dec": 3.335822753298481,
+   "fa_adm": 3.4589571502323184,
+   "n_fa": 134,
+   "fa_dec_nogate": 3.335822753298481,
+   "fa_dec_noeps": 5.526512322628827,
+   "fa_dec_learned": 6.646751306945482,
+   "ep_fallback": 3.552838139304305,
+   "ep_collision": 0.0,
+   "ep_mv": 0.0,
+   "ep_dead": 0.0,
+   "episodes": 60
+  },
+  {
+   "category": "Rain (35-50)",
+   "ood": false,
+   "n": 2152,
+   "n_risky": 1053,
+   "admission": 90.10223048327137,
+   "fallback": 9.89776951672863,
+   "familiar": 97.25836431226766,
+   "cov_all": 96.56133828996283,
+   "cov_risky": 92.9724596391263,
+   "cov_adm": 97.11191335740072,
+   "cov_unfam": 98.30508474576271,
+   "fa_dec": 0.929368029739777,
+   "fa_adm": 1.0314595152140278,
+   "n_fa": 20,
+   "fa_dec_nogate": 0.9758364312267658,
+   "fa_dec_noeps": 2.7881040892193307,
+   "fa_dec_learned": 6.784386617100371,
+   "ep_fallback": 9.568422669328829,
+   "ep_collision": 0.0,
+   "ep_mv": 1.6666666666666667,
+   "ep_dead": 0.0,
+   "episodes": 60
+  },
+  {
+   "category": "High speed (50-60)",
+   "ood": true,
+   "n": 1285,
+   "n_risky": 726,
+   "admission": 78.98832684824903,
+   "fallback": 21.01167315175097,
+   "familiar": 83.96887159533074,
+   "cov_all": 94.78599221789882,
+   "cov_risky": 90.77134986225896,
+   "cov_adm": 95.66502463054188,
+   "cov_unfam": 90.29126213592234,
+   "fa_dec": 2.178988326848249,
+   "fa_adm": 2.7586206896551726,
+   "n_fa": 28,
+   "fa_dec_nogate": 2.8015564202334633,
+   "fa_dec_noeps": 2.8015564202334633,
+   "fa_dec_learned": 11.59533073929961,
+   "ep_fallback": 22.171136653895275,
+   "ep_collision": 3.3333333333333335,
+   "ep_mv": 10.0,
+   "ep_dead": 1.6666666666666667,
+   "episodes": 60
+  },
+  {
+   "category": "Novel trajectory",
+   "ood": true,
+   "n": 2642,
+   "n_risky": 770,
+   "admission": 96.13928841786526,
+   "fallback": 3.8607115821347406,
+   "familiar": 98.52384557153671,
+   "cov_all": 97.91824375473126,
+   "cov_risky": 92.85714285714286,
+   "cov_adm": 98.14960629921259,
+   "cov_unfam": 94.87179487179486,
+   "fa_dec": 0.757002271006813,
+   "fa_adm": 0.7874015748031495,
+   "n_fa": 20,
+   "fa_dec_nogate": 0.8327024981074944,
+   "fa_dec_noeps": 2.043906131718395,
+   "fa_dec_learned": 3.4822104466313397,
+   "ep_fallback": 4.042047303216118,
+   "ep_collision": 6.666666666666667,
+   "ep_mv": 18.333333333333332,
+   "ep_dead": 0.0,
+   "episodes": 60
+  },
+  {
+   "category": "High noise",
+   "ood": true,
+   "n": 1055,
+   "n_risky": 492,
+   "admission": 0.0,
+   "fallback": 100.0,
+   "familiar": 0.0,
+   "cov_all": 97.6303317535545,
+   "cov_risky": 94.91869918699187,
+   "cov_adm": NaN,
+   "cov_unfam": 97.6303317535545,
+   "fa_dec": 0.0,
+   "fa_adm": 0.0,
+   "n_fa": 0,
+   "fa_dec_nogate": 1.042654028436019,
+   "fa_dec_noeps": 0.0,
+   "fa_dec_learned": 14.502369668246445,
+   "ep_fallback": 100.0,
+   "ep_collision": 0.0,
+   "ep_mv": 6.666666666666667,
+   "ep_dead": 0.0,
+   "episodes": 60
+  },
+  {
+   "category": "Unseen weather",
+   "ood": true,
+   "n": 1283,
+   "n_risky": 753,
+   "admission": 0.0,
+   "fallback": 100.0,
+   "familiar": 0.0,
+   "cov_all": 89.55572876071707,
+   "cov_risky": 82.20451527224436,
+   "cov_adm": NaN,
+   "cov_unfam": 89.55572876071707,
+   "fa_dec": 0.0,
+   "fa_adm": 0.0,
+   "n_fa": 0,
+   "fa_dec_nogate": 5.611847233047545,
+   "fa_dec_noeps": 0.0,
+   "fa_dec_learned": 28.604832424006236,
+   "ep_fallback": 100.0,
+   "ep_collision": 0.0,
+   "ep_mv": 6.666666666666667,
+   "ep_dead": 1.6666666666666667,
+   "episodes": 60
+  }
+ ],
+ "gate_auc_all": 0.5638045323109794,
+ "gate_auc_ood": 0.5800224085104764,
+ "cov_fam": 96.13110993470973,
+ "cov_unfam": 93.03073624017155,
+ "cov_fam_ood": 97.28408473655622,
+ "cov_unfam_ood": 92.9926442121564
+}
